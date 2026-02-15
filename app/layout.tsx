@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   title: siteConfig.defaultMetadata.title,
   description: siteConfig.defaultMetadata.description,
   keywords: siteConfig.defaultMetadata.keywords,
+  verification: {
+    google: 'ULSqaFDUf6p1IdaIuCGxPQ6gBfP98MnWnn8r8ujDrvs',
+  },
 }
 
 export default function RootLayout({
