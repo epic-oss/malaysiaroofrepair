@@ -21,7 +21,7 @@ export default async function LeadsPage() {
   // Get user's company
   const { data: company } = await supabase
     .from('providers_roofrepair')
-    .select('id, name')
+    .select('id, name, is_premium')
     .eq('claimed_by', user.id)
     .single()
 
