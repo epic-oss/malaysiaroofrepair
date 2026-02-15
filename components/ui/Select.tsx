@@ -1,15 +1,16 @@
-import { SelectHTMLAttributes, forwardRef } from 'react'
+import { SelectHTMLAttributes, forwardRef, ReactNode } from 'react'
 import { cn } from '@/lib/utils/cn'
 
 export interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   label?: string
   error?: string
   helperText?: string
-  options: { value: string; label: string }[]
+  options?: { value: string; label: string }[]
+  children?: ReactNode
 }
 
 const Select = forwardRef<HTMLSelectElement, SelectProps>(
-  ({ className, label, error, helperText, id, options, ...props }, ref) => {
+  ({ className, label, error, helperText, id, options, children, ...props }, ref) => {
     const selectId = id || label?.toLowerCase().replace(/\s+/g, '-')
 
     return (
@@ -39,11 +40,13 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(
           )}
           {...props}
         >
-          {options.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
+          {options
+            ? options.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))
+            : children}
         </select>
         {error && (
           <p className="mt-1.5 text-sm text-red-600">{error}</p>
