@@ -1,7 +1,7 @@
 'use server'
 
 import { revalidatePath } from 'next/cache'
-import { supabaseAdmin } from '@/lib/supabase/admin'
+import { createAdminClient } from '@/lib/supabase/admin'
 import { inquirySchema } from '@/lib/utils/validators'
 
 interface InquiryFormData {
@@ -48,6 +48,7 @@ export async function createBroadcastLead(formData: FormData) {
   const data = validation.data
 
   // Insert inquiry to database (company_id = NULL for broadcast)
+  const supabaseAdmin = createAdminClient()
   const { data: inquiry, error } = await supabaseAdmin
     .from('inquiries_roofrepair')
     .insert({
@@ -117,6 +118,7 @@ export async function createBroadcastLead(formData: FormData) {
  */
 export async function createDirectLead(companyId: string, formData: FormData) {
   // Get company details first
+  const supabaseAdmin = createAdminClient()
   const { data: company } = await supabaseAdmin
     .from('providers_roofrepair')
     .select('id, name, email')
@@ -223,6 +225,7 @@ export async function createDirectLead(companyId: string, formData: FormData) {
  * Only returns inquiries for companies owned by the authenticated user
  */
 export async function getCompanyInquiries(companyId: string) {
+  const supabaseAdmin = createAdminClient()
   const { data, error } = await supabaseAdmin
     .from('inquiries_roofrepair')
     .select('*')
@@ -242,6 +245,7 @@ export async function getCompanyInquiries(companyId: string) {
  * These are inquiries with company_id = NULL
  */
 export async function getBroadcastLeads() {
+  const supabaseAdmin = createAdminClient()
   const { data, error } = await supabaseAdmin
     .from('inquiries_roofrepair')
     .select('*')
@@ -261,6 +265,7 @@ export async function getBroadcastLeads() {
  * Get total inquiry count (for admin stats)
  */
 export async function getInquiryCount(): Promise<number> {
+  const supabaseAdmin = createAdminClient()
   const { count } = await supabaseAdmin
     .from('inquiries_roofrepair')
     .select('*', { count: 'exact', head: true })
