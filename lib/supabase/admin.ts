@@ -21,7 +21,7 @@ export function createAdminClient() {
 // Helper function to check if user is admin
 export async function isAdmin(userId: string): Promise<boolean> {
   // TODO: Replace with your actual admin user ID
-  const ADMIN_USER_IDS = [
+  const ADMIN_USER_IDS: string[] = [
     // 'your-admin-user-id-here'
   ]
 
