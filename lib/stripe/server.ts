@@ -1,14 +1,37 @@
 import Stripe from 'stripe'
 import 'server-only'
 
-if (!process.env.STRIPE_SECRET_KEY) {
-  throw new Error('STRIPE_SECRET_KEY is not set in environment variables')
+// Lazy-load Stripe client to avoid build-time errors
+let stripeInstance: Stripe | null = null
+
+export function getStripe(): Stripe {
+  if (!stripeInstance) {
+    if (!process.env.STRIPE_SECRET_KEY) {
+      throw new Error('STRIPE_SECRET_KEY is not set in environment variables')
+    }
+    stripeInstance = new Stripe(process.env.STRIPE_SECRET_KEY, {
+      apiVersion: '2023-10-16',
+      typescript: true,
+    })
+  }
+  return stripeInstance
 }
 
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-  apiVersion: '2023-10-16',
-  typescript: true,
-})
+// For backward compatibility with webhook route
+export const stripe = {
+  get webhooks() {
+    return getStripe().webhooks
+  },
+  get checkout() {
+    return getStripe().checkout
+  },
+  get subscriptions() {
+    return getStripe().subscriptions
+  },
+  get billingPortal() {
+    return getStripe().billingPortal
+  },
+}
 
 /**
  * Create a Stripe Checkout Session for Premium subscription
@@ -33,7 +56,8 @@ export async function createCheckoutSession({
   }
 
   try {
-    const session = await stripe.checkout.sessions.create({
+    const stripeClient = getStripe()
+    const session = await stripeClient.checkout.sessions.create({
       mode: 'subscription',
       payment_method_types: ['card'],
       line_items: [
@@ -79,7 +103,8 @@ export async function createCustomerPortalSession({
   returnUrl: string
 }) {
   try {
-    const session = await stripe.billingPortal.sessions.create({
+    const stripeClient = getStripe()
+    const session = await stripeClient.billingPortal.sessions.create({
       customer: customerId,
       return_url: returnUrl,
     })
@@ -96,7 +121,8 @@ export async function createCustomerPortalSession({
  */
 export async function getSubscription(subscriptionId: string) {
   try {
-    const subscription = await stripe.subscriptions.retrieve(subscriptionId)
+    const stripeClient = getStripe()
+    const subscription = await stripeClient.subscriptions.retrieve(subscriptionId)
     return subscription
   } catch (error) {
     console.error('Error retrieving subscription:', error)
@@ -109,7 +135,8 @@ export async function getSubscription(subscriptionId: string) {
  */
 export async function cancelSubscription(subscriptionId: string) {
   try {
-    const subscription = await stripe.subscriptions.cancel(subscriptionId)
+    const stripeClient = getStripe()
+    const subscription = await stripeClient.subscriptions.cancel(subscriptionId)
     return subscription
   } catch (error) {
     console.error('Error cancelling subscription:', error)
