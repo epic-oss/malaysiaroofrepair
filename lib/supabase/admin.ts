@@ -1,21 +1,19 @@
 import { createClient } from '@supabase/supabase-js'
 import 'server-only'
 
+// Helper function to get admin client (lazy-loaded to avoid build-time errors)
 // Admin client bypasses RLS - use ONLY for admin operations
-export const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!,
-  {
-    auth: {
-      autoRefreshToken: false,
-      persistSession: false
-    }
-  }
-)
-
-// Helper function to get admin client (for consistency with naming convention)
 export function createAdminClient() {
-  return supabaseAdmin
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!,
+    {
+      auth: {
+        autoRefreshToken: false,
+        persistSession: false
+      }
+    }
+  )
 }
 
 // Helper function to check if user is admin
