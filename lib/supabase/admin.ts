@@ -13,6 +13,11 @@ export const supabaseAdmin = createClient(
   }
 )
 
+// Helper function to get admin client (for consistency with naming convention)
+export function createAdminClient() {
+  return supabaseAdmin
+}
+
 // Helper function to check if user is admin
 export async function isAdmin(userId: string): Promise<boolean> {
   // TODO: Replace with your actual admin user ID
