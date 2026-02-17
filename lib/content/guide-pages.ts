@@ -498,4 +498,78 @@ export const guidePages: GuidePage[] = [
       ],
     },
   },
+  {
+    slug: 'bitumen-waterproofing-malaysia',
+    title: `Bitumen Waterproofing Malaysia — Torch-On Membrane Complete Guide ${siteConfig.currentYear}`,
+    description:
+      'Complete guide to bitumen waterproofing in Malaysia. Torch-on membrane types (APP vs SBS), popular brands (Obaproof, Sika, Bostik, Fosroc), installation costs (RM8–15/sq ft), step-by-step application, and when to use bitumen over other waterproofing methods.',
+    h1: `Bitumen Waterproofing Malaysia — Torch-On Membrane Complete Guide ${siteConfig.currentYear}`,
+    targetKeyword: 'bitumen waterproofing',
+    monthlySearchVolume: 590,
+    content: {
+      intro:
+        'Bitumen waterproofing — including torch-on membrane (membran bakar) and liquid bitumen coatings — is the most widely used waterproofing method for flat concrete roofs in Malaysia. This guide covers how it works, APP vs SBS types, leading brands, professional installation costs, and when to choose bitumen over alternatives like acrylic or PU coatings.',
+      sections: [
+        {
+          heading: 'Types of Bitumen Waterproofing',
+          content:
+            'The three main types used in Malaysia are: (1) Torch-On Membrane (Membran Bakar) — pre-fabricated bitumen sheet rolls heat-bonded to concrete with a gas torch, the industry standard for flat roofs, 15–20+ year lifespan; (2) Self-Adhesive Bitumen Membrane — peel-and-stick application, no flame needed, used for underlayment and secondary layers; (3) Liquid Bitumen Coatings — brush or roller-applied, best for foundations, retaining walls, and below-grade structures.',
+        },
+        {
+          heading: 'Professional Installation Costs 2026',
+          content:
+            'Torch-on membrane installed: RM8–12/sq ft (3mm) or RM10–15/sq ft (4mm). Typical car porch (300–500 sq ft): RM3,000–7,500. Typical flat roof (1,000 sq ft): RM8,000–15,000. Minimum contractor trip charge: RM1,500. Always choose 4mm membrane for Malaysian conditions.',
+        },
+      ],
+      faq: [
+        {
+          question: 'How long does torch-on membrane last in Malaysia?',
+          answer:
+            'With professional installation, torch-on bitumen membrane typically lasts 15–20 years in Malaysia. APP modified membranes with mineral finish can last even longer. Key factors are installation quality, membrane thickness (4mm recommended), and UV protection.',
+        },
+        {
+          question: 'How much does bitumen waterproofing cost in Malaysia?',
+          answer:
+            'Professional installation ranges from RM8–15 per square foot. A typical car porch (300–500 sq ft) costs RM3,000–7,500. A full flat roof (1,000 sq ft) runs RM8,000–15,000. Most contractors have a minimum charge of RM1,500 per trip.',
+        },
+      ],
+    },
+  },
+  {
+    slug: 'sika-109-review',
+    title: `SikaTop Seal 109 Review Malaysia ${siteConfig.currentYear} — Is It Worth It?`,
+    description:
+      "Honest review of SikaTop Seal-109 MY — Malaysia's most popular flexible cementitious waterproofing coating. Pricing (RM250–350/set), Sika 109 vs 107 comparison, application guide, where to buy, and when to use it over Pentens T-200 or Sikalastic 1K.",
+    h1: `SikaTop Seal 109 Review Malaysia ${siteConfig.currentYear} — Is It Worth It?`,
+    targetKeyword: 'sika 109 review',
+    monthlySearchVolume: 320,
+    content: {
+      intro:
+        'SikaTop Seal-109 MY is a two-part, polymer-modified flexible cementitious waterproofing coating manufactured by Sika in Sg. Buloh, Selangor. It is the most commonly specified waterproofing product for bathrooms, wet areas, pools, and balconies in Malaysia. This review covers pricing, how it compares to Sika 107, correct application, and when it is the right choice.',
+      sections: [
+        {
+          heading: 'Sika 109 vs Sika 107 — What Is the Difference?',
+          content:
+            'The critical difference is flexibility. Sika 109 is FLEXIBLE — it bridges cracks up to 1mm and has >100% elongation at break (ASTM D412). Sika 107 is RIGID with no crack-bridging ability. For most Malaysian bathrooms where tile substrates experience micro-movement, 109 is the correct choice. Sika 107 is only appropriate for genuinely rigid structures like water tanks and basement walls with zero expected movement.',
+        },
+        {
+          heading: 'Pricing and Coverage',
+          content:
+            'A 36kg set (Part A 10kg liquid + Part B 26kg powder) costs RM250–350 at hardware stores and Shopee. At 1.0 kg/m² per coat with 2 coats required, one set covers approximately 18 sqm. A standard Malaysian bathroom (floor + walls) typically requires 1.5–2 sets. Cost per sqm is approximately RM14–19 material only.',
+        },
+      ],
+      faq: [
+        {
+          question: 'Is Sika 109 good for bathroom waterproofing?',
+          answer:
+            'Yes — SikaTop Seal 109 is one of the most widely used waterproofing products for bathrooms in Malaysia. Apply minimum 2 coats on floors and 1 coat on splash-zone walls before tiling.',
+        },
+        {
+          question: 'What is the difference between Sika 107 and 109?',
+          answer:
+            'Sika 109 is flexible (bridges cracks up to 1mm, >100% elongation). Sika 107 is rigid with no crack bridging. For bathrooms and any area with possible movement, 109 is the right choice.',
+        },
+      ],
+    },
+  },
 ]
