@@ -126,6 +126,7 @@ function RenderTextSection({ section }: { section: TextSection }) {
     | { kind: 'para'; lines: string[] }
     | { kind: 'bullets'; items: string[] }
     | { kind: 'diagnostics'; items: string[] }
+    | { kind: 'numbered'; items: { num: number; text: string }[] }
 
   const blocks: Block[] = []
   let current: Block | null = null
@@ -138,9 +139,11 @@ function RenderTextSection({ section }: { section: TextSection }) {
       continue
     }
 
-    // Bullet line: starts with •
-    if (trimmed.startsWith('•')) {
-      const text = trimmed.slice(1).trim()
+    // Bullet line: starts with • or -
+    if (trimmed.startsWith('•') || trimmed.startsWith('- ')) {
+      const text = trimmed.startsWith('•')
+        ? trimmed.slice(1).trim()
+        : trimmed.slice(2).trim()
       if (current?.kind === 'bullets') {
         current.items.push(text)
       } else {
@@ -150,7 +153,23 @@ function RenderTextSection({ section }: { section: TextSection }) {
       continue
     }
 
-    // Diagnostic line: contains ' → ' (no • prefix)
+    // Numbered item: "1. text" or "Step 1: text"
+    const numDot = trimmed.match(/^(\d+)\.\s+(.+)/)
+    const stepNum = trimmed.match(/^Step\s+(\d+):\s*(.+)/i)
+    const numMatch = numDot ?? stepNum
+    if (numMatch) {
+      const num = parseInt(numMatch[1], 10)
+      const text = numMatch[2]
+      if (current?.kind === 'numbered') {
+        current.items.push({ num, text })
+      } else {
+        current = { kind: 'numbered', items: [{ num, text }] }
+        blocks.push(current)
+      }
+      continue
+    }
+
+    // Diagnostic line: contains ' → ' (no • or - prefix)
     if (trimmed.includes(' → ')) {
       if (current?.kind === 'diagnostics') {
         current.items.push(trimmed)
@@ -233,6 +252,21 @@ function RenderTextSection({ section }: { section: TextSection }) {
                 )
               })}
             </ul>
+          )
+        }
+
+        if (block.kind === 'numbered') {
+          return (
+            <ol key={i} className="space-y-3">
+              {block.items.map((item, j) => (
+                <li key={j} className="flex gap-3">
+                  <span className="flex-none flex items-center justify-center h-6 w-6 rounded-full bg-primary-900 text-white text-xs font-bold shrink-0 mt-0.5">
+                    {item.num}
+                  </span>
+                  <span className="text-sm text-gray-700 leading-relaxed">{parseBold(item.text)}</span>
+                </li>
+              ))}
+            </ol>
           )
         }
       })}

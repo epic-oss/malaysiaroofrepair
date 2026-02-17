@@ -155,7 +155,7 @@ export const guidePages: GuidePage[] = [
         {
           heading: 'Pentens T200 Price in Malaysia',
           content:
-            '20-liter pail: RM60-90\n5-liter pail: RM20-30\n1-liter tin: RM6-10\n\nCoverage: Approximately 20-25 sq ft per liter (2 coats)\nFor a 1000 sq ft roof: RM600-900 for materials\nWith labor: RM1,500-2,500 total\n\nPrices vary by location and retailer. Bulk purchases often get discounts.',
+            '• 20-litre pail: RM60–90\n• 5-litre pail: RM20–30\n• 1-litre tin: RM6–10\n\n• Coverage: approximately 20–25 sq ft per litre (2 coats)\n• For a 1,000 sq ft roof: RM600–900 materials only\n• With professional labour: RM1,500–2,500 total\n\nPrices vary by location and retailer. Bulk purchases often attract discounts.',
         },
         {
           heading: 'How to Apply Pentens T200',
@@ -208,22 +208,22 @@ export const guidePages: GuidePage[] = [
         {
           heading: 'Roof Leak Repair Cost',
           content:
-            'Minor leak (1-2 spots): RM500-RM1,500\nModerate leaks (multiple spots): RM1,500-RM3,000\nMajor leaks (structural damage): RM3,000-RM8,000\n\nCosts include finding leak source, removing damaged materials, applying waterproofing, and internal ceiling repair if needed.',
+            '• Minor leak (1–2 spots): RM500–RM1,500\n• Moderate leaks (multiple spots): RM1,500–RM3,000\n• Major leaks (structural damage): RM3,000–RM8,000\n\nCosts include finding the leak source, removing damaged materials, applying waterproofing, and internal ceiling repair if needed.',
         },
         {
           heading: 'Roof Tile Replacement Cost',
           content:
-            'Concrete tiles: RM8-15 per tile + labor (RM5-10 per tile)\nClay tiles: RM12-25 per tile + labor\nMetal roof sheets: RM15-30 per sq ft installed\n\nMinimum call-out charge: RM300-500\n10-20 tiles replacement: RM800-1,500\n50+ tiles: RM2,000-4,000',
+            '• Concrete tiles: RM8–15 per tile + labour (RM5–10 per tile)\n• Clay tiles: RM12–25 per tile + labour\n• Metal roof sheets: RM15–30 per sq ft installed\n\n• Minimum call-out charge: RM300–500\n• 10–20 tiles replacement: RM800–1,500\n• 50+ tiles: RM2,000–4,000',
         },
         {
           heading: 'Roof Waterproofing Cost',
           content:
-            'Coating waterproofing: RM10-25 per sq ft\nMembrane waterproofing: RM15-35 per sq ft\n\nTypical costs:\n500 sq ft roof: RM5,000-12,500\n1000 sq ft roof: RM10,000-25,000\n2000 sq ft roof: RM20,000-50,000',
+            '• Coating waterproofing: RM10–25 per sq ft\n• Membrane waterproofing: RM15–35 per sq ft\n\nTypical costs by roof size:\n• 500 sq ft roof: RM5,000–12,500\n• 1,000 sq ft roof: RM10,000–25,000\n• 2,000 sq ft roof: RM20,000–50,000',
         },
         {
           heading: 'Full Roof Replacement Cost',
           content:
-            'Metal/zinc roofing: RM25-40 per sq ft\nConcrete tiles: RM30-50 per sq ft\nClay tiles: RM40-80 per sq ft\nMetal deck + tiles: RM50-90 per sq ft\n\nIncludes removal of old roof, new structure if needed, installation, and cleanup.',
+            '• Metal/zinc roofing: RM25–40 per sq ft\n• Concrete tiles: RM30–50 per sq ft\n• Clay tiles: RM40–80 per sq ft\n• Metal deck + tiles: RM50–90 per sq ft\n\nIncludes removal of old roof, new structure if needed, installation, and cleanup.',
         },
       ],
       faq: [
@@ -255,22 +255,22 @@ export const guidePages: GuidePage[] = [
         {
           heading: 'Finding the Leak Source',
           content:
-            'Water stains on ceiling indicate general area\nTrace water stains upward and outward\nCheck attic during rain\nLook for cracked tiles, holes, or missing flashing\nWater travels along rafters before dripping\nActual leak source is usually higher than ceiling stain',
+            '• Water stains on the ceiling indicate the general area\n• Trace water stains upward and outward from the drip point\n• Check the attic or roof space during or after heavy rain\n• Look for cracked tiles, holes, or missing flashing\n• Water travels along rafters before dripping — the drip point is rarely the source\n• Actual leak source is usually higher than the ceiling stain',
         },
         {
           heading: 'Temporary DIY Fixes',
           content:
-            'Tarpaulin cover: Secure with weights (temporary during rain)\nWaterproof tape: For small cracks (3M or similar)\nRoof sealant: Quick-dry sealant for emergency patches\nBuckets and containers: Catch water to prevent floor damage\n\nThese are TEMPORARY only. Schedule professional repair ASAP.',
+            '• **Tarpaulin cover:** Secure with weights or sandbags over the affected area during rain\n• **Waterproof tape:** For small accessible cracks (3M or similar sealing tape)\n• **Roof sealant:** Quick-dry sealant for emergency patching of small holes\n• **Buckets and containers:** Catch water immediately to prevent floor and furniture damage\n\nThese are TEMPORARY only. Schedule a professional repair as soon as possible.',
         },
         {
           heading: 'Permanent Repair Solutions',
           content:
-            'Tile replacement: Remove damaged tiles, replace with matching ones\nFlashing repair: Replace or reseal metal flashing\nWaterproofing application: Apply membrane or coating\nValley repair: Critical leak-prone area\nStructural repair: If rafters or deck damaged\n\nAlways hire licensed contractors for permanent fixes.',
+            '• **Tile replacement:** Remove damaged or cracked tiles and replace with matching ones\n• **Flashing repair:** Replace or reseal metal flashing around chimneys, valleys, and edges\n• **Waterproofing application:** Apply membrane or coating to seal the surface\n• **Valley repair:** Valleys are a critical leak-prone area — reseal or replace the valley lining\n• **Structural repair:** If rafters or roof deck are damaged, structural repair is required\n\nAlways hire licensed contractors for permanent fixes.',
         },
         {
           heading: 'Preventing Future Leaks',
           content:
-            'Annual roof inspection (before monsoon season)\nClean gutters regularly\nTrim overhanging tree branches\nReplace worn tiles promptly\nReapply waterproofing every 5-7 years\nCheck and maintain flashing',
+            '• Annual roof inspection before each monsoon season\n• Clean gutters and downpipes at least twice a year\n• Trim overhanging tree branches that can dislodge tiles in storms\n• Replace worn or cracked tiles promptly before they let water in\n• Reapply waterproofing coating every 5–7 years\n• Check and reseal flashing around penetrations annually',
         },
       ],
       faq: [
