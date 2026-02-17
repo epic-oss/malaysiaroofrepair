@@ -13,7 +13,7 @@ export function FloatingButton() {
       {/* Desktop Button - Bottom Right */}
       <button
         onClick={() => setIsOpen(true)}
-        className="hidden md:flex fixed bottom-8 right-8 z-40 items-center gap-2 rounded-full bg-gradient-to-r from-primary-600 to-primary-700 px-6 py-4 text-white shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-200 font-semibold"
+        className="hidden md:flex fixed bottom-8 right-8 z-40 items-center gap-2 rounded-full bg-accent-500 hover:bg-accent-600 px-6 py-4 text-white shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-200 font-semibold"
         aria-label="Get Free Quotes"
       >
         <MessageSquare className="h-5 w-5" />
