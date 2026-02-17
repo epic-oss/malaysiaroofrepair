@@ -5,6 +5,10 @@ import { createAdminClient } from '@/lib/supabase/admin'
 import { malayPages } from '@/lib/content/malay-pages'
 import { guidePages } from '@/lib/content/guide-pages'
 
+// Force dynamic rendering to avoid build-time errors
+export const dynamic = 'force-dynamic'
+export const revalidate = 3600 // Revalidate every hour
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = siteConfig.siteUrl
 
