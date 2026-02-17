@@ -1,34 +1,21 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { MapPin, Award, Zap } from 'lucide-react'
 import { Card } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
 import { Company } from '@/lib/types/database'
 import { cn } from '@/lib/utils/cn'
+import { CompanyLogo } from './CompanyLogo'
 
 interface ContractorCardProps {
   company: Company
   className?: string
 }
 
-// Generate a consistent background color from the company name
-function getInitialColor(name: string): string {
-  const colors = [
-    'bg-blue-600', 'bg-indigo-600', 'bg-violet-600',
-    'bg-teal-600', 'bg-emerald-600', 'bg-cyan-600',
-    'bg-orange-600', 'bg-rose-600', 'bg-pink-600',
-  ]
-  const index = name.charCodeAt(0) % colors.length
-  return colors[index]
-}
-
 export function ContractorCard({ company, className }: ContractorCardProps) {
   const isPremium = company.is_premium
   const isFeatured = company.is_featured
   const hasEmergencyService = company.emergency_service
-  const initial = company.name.charAt(0).toUpperCase()
-  const initialColor = getInitialColor(company.name)
 
   return (
     <Card
@@ -40,26 +27,7 @@ export function ContractorCard({ company, className }: ContractorCardProps) {
         <div className="relative p-4 pb-3">
           <div className="flex items-start gap-3">
             {/* Logo / Initial placeholder */}
-            <div className="shrink-0">
-              {company.logo_url ? (
-                <div className="relative h-16 w-16 overflow-hidden rounded-lg border border-gray-100">
-                  <Image
-                    src={company.logo_url}
-                    alt={`${company.name} logo`}
-                    fill
-                    className="object-cover"
-                    sizes="64px"
-                  />
-                </div>
-              ) : (
-                <div className={cn(
-                  'flex h-16 w-16 items-center justify-center rounded-lg text-white text-2xl font-bold',
-                  initialColor
-                )}>
-                  {initial}
-                </div>
-              )}
-            </div>
+            <CompanyLogo name={company.name} logoUrl={company.logo_url} />
 
             {/* Name, location, premium badge */}
             <div className="flex-1 min-w-0">
