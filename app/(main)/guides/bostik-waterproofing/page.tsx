@@ -32,7 +32,7 @@ const products = [
     badge: null,
     type: 'Single-component acrylic flexible waterproofing coating',
     bestFor: 'Exposed roof membranes, pipes, conduits, parapet walls',
-    price: 'Available at hardware stores and online',
+    price: null,
     features: [
       'Water-based, environmentally friendly',
       'Bridges cracks',
@@ -187,24 +187,31 @@ export default function BostikWaterproofingPage() {
           {/* Product Range */}
           <div className="bg-white rounded-xl shadow-sm p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Complete Bostik Waterproofing Product Range</h2>
-            <div className="space-y-5">
+            <div className="space-y-3">
               {products.map((product) => (
-                <div key={product.name} className="border border-gray-200 rounded-lg p-5 hover:border-primary-200 transition-colors">
-                  <div className="flex flex-wrap items-start gap-2 mb-2">
-                    <h3 className="text-base font-bold text-gray-900">{product.name}</h3>
+                <div key={product.name} className="border border-gray-200 rounded-lg p-4 hover:border-primary-200 transition-colors">
+                  {/* Header row */}
+                  <div className="flex flex-wrap items-center gap-2 mb-1">
+                    <h3 className="text-sm font-bold text-gray-900">{product.name}</h3>
                     {product.badge && (
-                      <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${product.badgeColor}`}>
+                      <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${product.badgeColor}`}>
                         {product.badge}
                       </span>
                     )}
+                    {product.price && (
+                      <span className="ml-auto text-sm font-semibold text-primary-700 whitespace-nowrap">{product.price}</span>
+                    )}
                   </div>
-                  <p className="text-xs text-gray-500 mb-1"><span className="font-medium">Type:</span> {product.type}</p>
-                  <p className="text-xs text-gray-500 mb-1"><span className="font-medium">Best for:</span> {product.bestFor}</p>
-                  <p className="text-sm font-semibold text-primary-700 mb-3">{product.price}</p>
-                  <ul className="space-y-1">
+                  {/* Meta */}
+                  <p className="text-xs text-gray-500 leading-snug">
+                    <span className="font-medium text-gray-600">Type:</span> {product.type} &nbsp;·&nbsp;
+                    <span className="font-medium text-gray-600">Best for:</span> {product.bestFor}
+                  </p>
+                  {/* Features: 2-col grid on desktop */}
+                  <ul className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-0.5">
                     {product.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2 text-sm text-gray-600">
-                        <CheckCircle className="h-4 w-4 text-green-500 shrink-0 mt-0.5" />
+                      <li key={f} className="flex items-start gap-1.5 text-xs text-gray-600">
+                        <CheckCircle className="h-3.5 w-3.5 text-green-500 shrink-0 mt-0.5" />
                         {f}
                       </li>
                     ))}
