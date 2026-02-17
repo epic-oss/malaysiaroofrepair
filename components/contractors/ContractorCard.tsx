@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { MapPin, Phone, Award, Zap } from 'lucide-react'
+import Image from 'next/image'
+import { MapPin, Award, Zap } from 'lucide-react'
 import { Card } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
@@ -11,10 +12,23 @@ interface ContractorCardProps {
   className?: string
 }
 
+// Generate a consistent background color from the company name
+function getInitialColor(name: string): string {
+  const colors = [
+    'bg-blue-600', 'bg-indigo-600', 'bg-violet-600',
+    'bg-teal-600', 'bg-emerald-600', 'bg-cyan-600',
+    'bg-orange-600', 'bg-rose-600', 'bg-pink-600',
+  ]
+  const index = name.charCodeAt(0) % colors.length
+  return colors[index]
+}
+
 export function ContractorCard({ company, className }: ContractorCardProps) {
   const isPremium = company.is_premium
   const isFeatured = company.is_featured
   const hasEmergencyService = company.emergency_service
+  const initial = company.name.charAt(0).toUpperCase()
+  const initialColor = getInitialColor(company.name)
 
   return (
     <Card
@@ -22,39 +36,61 @@ export function ContractorCard({ company, className }: ContractorCardProps) {
       className={cn('overflow-hidden transition-all hover:shadow-xl', className)}
     >
       <Link href={`/companies/${company.slug}`}>
-        {/* Header with badges */}
+        {/* Header with logo + name + badges */}
         <div className="relative p-4 pb-3">
-          <div className="flex items-start justify-between">
-            <div className="flex-1">
-              <h3 className="text-lg font-bold text-gray-900 line-clamp-1">
-                {company.name}
-              </h3>
+          <div className="flex items-start gap-3">
+            {/* Logo / Initial placeholder */}
+            <div className="shrink-0">
+              {company.logo_url ? (
+                <div className="relative h-16 w-16 overflow-hidden rounded-lg border border-gray-100">
+                  <Image
+                    src={company.logo_url}
+                    alt={`${company.name} logo`}
+                    fill
+                    className="object-cover"
+                    sizes="64px"
+                  />
+                </div>
+              ) : (
+                <div className={cn(
+                  'flex h-16 w-16 items-center justify-center rounded-lg text-white text-2xl font-bold',
+                  initialColor
+                )}>
+                  {initial}
+                </div>
+              )}
+            </div>
+
+            {/* Name, location, premium badge */}
+            <div className="flex-1 min-w-0">
+              <div className="flex items-start justify-between gap-2">
+                <h3 className="text-lg font-bold text-gray-900 line-clamp-1">
+                  {company.name}
+                </h3>
+                {isPremium && (
+                  <Badge variant="premium" className="ml-auto shrink-0">
+                    <Award className="mr-1 h-3 w-3" />
+                    Verified
+                  </Badge>
+                )}
+              </div>
               <div className="mt-1 flex items-center text-sm text-gray-600">
-                <MapPin className="mr-1 h-4 w-4" />
+                <MapPin className="mr-1 h-4 w-4 shrink-0" />
                 <span className="line-clamp-1">
                   {company.city && `${company.city}, `}{company.state}
                 </span>
               </div>
+              {/* Emergency Service Badge */}
+              {hasEmergencyService && (
+                <div className="mt-1.5">
+                  <Badge variant="emergency">
+                    <Zap className="mr-1 h-3 w-3" />
+                    24HR Emergency
+                  </Badge>
+                </div>
+              )}
             </div>
-
-            {/* Premium Badge */}
-            {isPremium && (
-              <Badge variant="premium" className="ml-2">
-                <Award className="mr-1 h-3 w-3" />
-                Verified
-              </Badge>
-            )}
           </div>
-
-          {/* Emergency Service Badge */}
-          {hasEmergencyService && (
-            <div className="mt-2">
-              <Badge variant="emergency">
-                <Zap className="mr-1 h-3 w-3" />
-                24HR Emergency
-              </Badge>
-            </div>
-          )}
         </div>
 
         {/* Description */}
