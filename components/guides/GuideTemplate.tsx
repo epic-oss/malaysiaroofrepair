@@ -122,9 +122,120 @@ function parseBold(text: string): React.ReactNode[] {
 // ─── Section renderers ────────────────────────────────────────────────────────
 
 function RenderTextSection({ section }: { section: TextSection }) {
+  type Block =
+    | { kind: 'para'; lines: string[] }
+    | { kind: 'bullets'; items: string[] }
+    | { kind: 'diagnostics'; items: string[] }
+
+  const blocks: Block[] = []
+  let current: Block | null = null
+
+  for (const raw of section.content.split('\n')) {
+    const trimmed = raw.trim()
+
+    if (!trimmed) {
+      current = null
+      continue
+    }
+
+    // Bullet line: starts with •
+    if (trimmed.startsWith('•')) {
+      const text = trimmed.slice(1).trim()
+      if (current?.kind === 'bullets') {
+        current.items.push(text)
+      } else {
+        current = { kind: 'bullets', items: [text] }
+        blocks.push(current)
+      }
+      continue
+    }
+
+    // Diagnostic line: contains ' → ' (no • prefix)
+    if (trimmed.includes(' → ')) {
+      if (current?.kind === 'diagnostics') {
+        current.items.push(trimmed)
+      } else {
+        current = { kind: 'diagnostics', items: [trimmed] }
+        blocks.push(current)
+      }
+      continue
+    }
+
+    // Regular paragraph
+    if (current?.kind === 'para') {
+      current.lines.push(raw)
+    } else {
+      current = { kind: 'para', lines: [raw] }
+      blocks.push(current)
+    }
+  }
+
   return (
-    <div className="text-gray-700 leading-relaxed whitespace-pre-line text-sm sm:text-base">
-      {parseBold(section.content)}
+    <div className="space-y-4 text-sm sm:text-base">
+      {blocks.map((block, i) => {
+        if (block.kind === 'para') {
+          return (
+            <div key={i} className="text-gray-700 leading-relaxed whitespace-pre-line">
+              {parseBold(block.lines.join('\n'))}
+            </div>
+          )
+        }
+
+        if (block.kind === 'bullets') {
+          return (
+            <ul key={i} className="space-y-2.5">
+              {block.items.map((item, j) => {
+                // Optionally split on → inside a bullet to style the arrow
+                const arrowIdx = item.indexOf(' → ')
+                const before = arrowIdx >= 0 ? item.slice(0, arrowIdx) : null
+                const after = arrowIdx >= 0 ? item.slice(arrowIdx + 3) : null
+                return (
+                  <li key={j} className="flex items-start gap-2.5 text-gray-700">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-600 shrink-0" />
+                    <span className="leading-relaxed">
+                      {before !== null ? (
+                        <>
+                          <span className="font-medium text-gray-900">{parseBold(before)}</span>
+                          <span className="text-primary-500 mx-1.5">→</span>
+                          <span>{parseBold(after ?? '')}</span>
+                        </>
+                      ) : (
+                        parseBold(item)
+                      )}
+                    </span>
+                  </li>
+                )
+              })}
+            </ul>
+          )
+        }
+
+        if (block.kind === 'diagnostics') {
+          return (
+            <ul key={i} className="border-l-2 border-primary-200 pl-4 space-y-2">
+              {block.items.map((item, j) => {
+                const arrowIdx = item.indexOf(' → ')
+                const condition = arrowIdx >= 0 ? item.slice(0, arrowIdx) : item
+                const diagnosis = arrowIdx >= 0 ? item.slice(arrowIdx + 3) : ''
+                return (
+                  <li key={j} className="flex items-start gap-2 text-sm leading-snug py-0.5">
+                    <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary-400 shrink-0" />
+                    <span>
+                      <span className="font-medium text-gray-900">{condition}</span>
+                      {diagnosis && (
+                        <>
+                          <span className="text-primary-500 mx-1.5">→</span>
+                          <span className="text-gray-600">{diagnosis}</span>
+                        </>
+                      )}
+                    </span>
+                  </li>
+                )
+              })}
+            </ul>
+          )
+        }
+      })}
     </div>
   )
 }
