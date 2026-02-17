@@ -13,6 +13,7 @@ const navLinks = [
   { href: '/locations/selangor', label: 'Locations' },
   { href: '/services/roof-leak-repair', label: 'Services' },
   { href: '/pricing', label: 'Pricing' },
+  { href: '/guides', label: 'Guides' },
 ]
 
 export function Navbar() {
