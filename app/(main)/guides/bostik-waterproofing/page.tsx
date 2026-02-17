@@ -1,8 +1,7 @@
-import Link from 'next/link'
-import { ArrowRight, CheckCircle } from 'lucide-react'
-import { Button } from '@/components/ui/Button'
-import { guidePages } from '@/lib/content/guide-pages'
-import { siteConfig } from '@/lib/config'
+import GuideTemplate, {
+  type GuideSection,
+  type ProductCard,
+} from '@/components/guides/GuideTemplate'
 
 export const metadata = {
   title: `Bostik Waterproofing Malaysia 2026 — Complete Product Guide & Prices`,
@@ -10,14 +9,14 @@ export const metadata = {
     'Complete guide to Bostik waterproofing products in Malaysia 2026. Compare Boscoseal AC2, PUW, RC2 prices, application methods, and see how Bostik compares to Sika and Pentens.',
 }
 
-const products = [
+const products: ProductCard[] = [
   {
     name: 'Boscoseal AC2 / Bostik Supercoat Fiber',
     badge: 'Most Popular',
     badgeColor: 'bg-accent-500 text-white',
     type: 'One-part water-based acrylic polymer fibre reinforced membrane',
     bestFor: 'Exposed roofs, bathrooms, balconies, wet areas',
-    price: '~RM380 / 20kg pail · ~RM112 / 5kg pail',
+    price: '~RM380 / 20kg · ~RM112 / 5kg',
     features: [
       'Built-in fibre reinforcement — no separate matting needed',
       'Low odour (suitable for indoor use)',
@@ -35,7 +34,7 @@ const products = [
     price: null,
     features: [
       'Water-based, environmentally friendly',
-      'Bridges cracks',
+      'Bridges cracks effectively',
       'Prevents metal corrosion',
       'UV resistant',
       'Flexible across wide temperature range',
@@ -53,7 +52,7 @@ const products = [
       'Highly elastomeric after curing',
       'Brush, roller, or trowel applied',
       'Strong adhesion to masonry',
-      'Non re-emulsifying (won\'t break down with water)',
+      "Non re-emulsifying (won't break down with water)",
     ],
   },
   {
@@ -124,282 +123,120 @@ const products = [
   },
 ]
 
-const applicationSteps = [
-  { step: 1, title: 'Surface preparation', detail: 'Clean surface, remove loose material, repair cracks wider than 2mm' },
-  { step: 2, title: 'Check surface moisture', detail: 'Surface should be clean and free of standing water. Damp surfaces are acceptable' },
-  { step: 3, title: 'Priming', detail: 'Not always required on concrete. On porous surfaces, a diluted coat (1:1 with water) can act as primer' },
-  { step: 4, title: 'First coat', detail: 'Apply by brush or roller at ~1.0–1.5 kg/m². Work into corners, joints, and cracks' },
-  { step: 5, title: 'Drying time', detail: 'Allow 4–6 hours between coats depending on weather. Do not apply if rain expected within 4 hours' },
-  { step: 6, title: 'Second coat', detail: 'Apply perpendicular to first coat direction to ensure even coverage and eliminate pinholes' },
-  { step: 7, title: 'Full cure', detail: '7 days for full waterproofing performance. Protect from rain for the first 24 hours' },
-  { step: 8, title: 'Tiling over', detail: 'For bathroom and wet area applications, you can tile over once fully cured' },
+const sections: GuideSection[] = [
+  {
+    type: 'products',
+    heading: 'Complete Bostik Waterproofing Product Range',
+    products,
+  },
+  {
+    type: 'pricing-table',
+    heading: 'Bostik Waterproofing Prices in Malaysia 2026',
+    subtitle: 'Verified January 2026. Prices may vary by retailer.',
+    columns: ['Product', 'Size', 'Price (RM)', 'Type'],
+    rows: [
+      { values: ['Boscoseal AC2', '20kg', '~RM380', 'Acrylic fibre membrane'], highlight: true },
+      { values: ['Boscoseal AC2', '5kg', '~RM112', 'Acrylic fibre membrane'] },
+      { values: ['Boscoseal PUW', '20kg', '~RM400–500', 'PU membrane'], highlight: true },
+      { values: ['Boscoseal 16', 'per roll', '~RM200–300', 'Sheet membrane'] },
+    ],
+    note: "Pro tip: Boscoseal AC2's built-in fibre reinforcement eliminates the need to purchase separate fibreglass matting (which adds RM30–80 to Sika/Pentens jobs), making the total installed cost competitive.",
+  },
+  {
+    type: 'comparison',
+    heading: 'Bostik vs Sika vs Pentens — Which Should You Choose?',
+    columns: ['Bostik', 'Sika', 'Pentens'],
+    columnColors: ['text-orange-300', 'text-blue-300', 'text-green-300'],
+    rows: [
+      { feature: 'Parent company', values: ['Arkema (France)', 'Sika AG (Switzerland)', 'Pentens (Malaysia)'] },
+      { feature: 'Market position', values: ['#3 in Malaysia', '#1 in Malaysia', '#2 in Malaysia'] },
+      { feature: 'Price range', values: ['Mid–premium', 'Budget to premium', 'Budget–mid'] },
+      { feature: 'Product range', values: ['Wide (8+ products)', 'Widest (10+ products)', 'Moderate (5–6)'] },
+      { feature: 'Roof specialist', values: ['Boscoseal AC2', 'SikaFill MY', 'Pentens T200'] },
+      { feature: 'Key advantage', values: ['Fibre-reinforced — no matting', 'Cheapest entry (RM65)', 'Local brand, budget-king'] },
+      { feature: 'Best for', values: ['DIY — single-product solution', 'Commercial, certified systems', 'Price-sensitive residential'] },
+    ],
+  },
+  {
+    type: 'steps',
+    heading: 'How to Apply Bostik Boscoseal AC2 (Step-by-Step)',
+    subtitle: 'Boscoseal AC2 is the most popular Bostik product for DIY roof and bathroom waterproofing.',
+    steps: [
+      { title: 'Surface preparation', detail: 'Clean the surface thoroughly. Remove loose material, paint, oil, and dust. Repair cracks wider than 2mm before waterproofing.' },
+      { title: 'Check surface moisture', detail: 'The surface should be clean and free of standing water. Damp surfaces are acceptable for most applications.' },
+      { title: 'Priming', detail: 'Not always required on concrete — check the Technical Data Sheet (TDS). On porous surfaces, a diluted coat of AC2 (1:1 with water) can act as primer.' },
+      { title: 'First coat', detail: 'Apply by brush or roller at approximately 1.0–1.5 kg/m². Work the product into all corners, joints, and cracks. For corners and movement joints, bed in Bostik sealing tape or fabric strip.' },
+      { title: 'Drying time', detail: 'Allow 4–6 hours between coats depending on weather and temperature. Do not apply in rain or if rain is expected within 4 hours.' },
+      { title: 'Second coat', detail: 'Apply perpendicular to the first coat direction to ensure even coverage and eliminate pinholes.' },
+      { title: 'Full cure', detail: '7 days for full waterproofing performance. Protect from rain for the first 24 hours.' },
+      { title: 'Tiling over', detail: 'For bathroom and wet area applications, you can tile over once fully cured.' },
+    ],
+    tip: "Boscoseal AC2's fibre reinforcement means you skip the fibreglass matting step that Sika and Pentens products require — one less product to buy and one less application step.",
+  },
+  {
+    type: 'where-to-buy',
+    heading: 'Where to Buy Bostik Waterproofing in Malaysia',
+    online: [
+      'Shopee Malaysia — search "Bostik Boscoseal" for full range including smaller packs',
+      'Lazada Malaysia — search "Bostik waterproofing" for competitive pricing',
+      'eWarehouse.my — stocks the full Boscoseal range',
+    ],
+    physical: [
+      'Hardware stores nationwide (use Bostik dealer locator at bostik.com/malaysia)',
+      'Chin Chun Hardware (Shah Alam, Selangor) — stocks professional range',
+      'VelocityDIY (Johor Bahru)',
+      'Mr. DIY (selected Bostik products, mainly smaller packs)',
+    ],
+    note: 'Always buy from authorised dealers to ensure genuine products. Bostik products have batch codes on packaging — verify at bostik.com/malaysia.',
+  },
 ]
 
 const faq = [
   {
     question: 'Is Bostik waterproofing good?',
-    answer: 'Yes. Bostik is backed by Arkema Group (France) with 135+ years of adhesive and waterproofing expertise and a presence in 50+ countries. The Boscoseal range is well-regarded by Malaysian contractors, particularly Boscoseal AC2 which is unique in the market for its built-in fibre reinforcement — eliminating the need for separate fibreglass matting.',
+    answer:
+      'Yes. Bostik is backed by Arkema Group (France) with 135+ years of adhesive and waterproofing expertise and a presence in 50+ countries. The Boscoseal range is well-regarded by Malaysian contractors, particularly Boscoseal AC2 which is unique in the market for its built-in fibre reinforcement — eliminating the need for separate fibreglass matting.',
   },
   {
     question: 'How long does Bostik waterproofing last?',
-    answer: 'Bostik waterproofing systems typically last 10–15 years with proper surface preparation and application. The polyurethane-based Boscoseal PUW can last longer in high-stress applications. Lifespan depends on UV exposure, foot traffic, surface preparation quality, and climate conditions.',
+    answer:
+      'Bostik waterproofing systems typically last 10–15 years with proper surface preparation and application. The polyurethane-based Boscoseal PUW can last longer in high-stress applications. Lifespan depends on UV exposure, foot traffic, surface preparation quality, and climate conditions.',
   },
   {
     question: 'Can I apply Bostik waterproofing myself?',
-    answer: 'Yes — especially Boscoseal AC2, which is designed for easy brush or roller application. It\'s one of the more DIY-friendly products on the market because the fibre reinforcement is pre-mixed, eliminating the tricky matting step. For roof areas larger than 50 sq metres or below-grade applications, professional application is recommended.',
+    answer:
+      "Yes — especially Boscoseal AC2, which is designed for easy brush or roller application. It's one of the more DIY-friendly products on the market because the fibre reinforcement is pre-mixed, eliminating the tricky matting step. For roof areas larger than 50 sq metres or below-grade applications, professional application is recommended.",
   },
   {
     question: 'Is Bostik better than Sika for waterproofing?',
-    answer: 'They excel in different areas. Bostik\'s key advantage is Boscoseal AC2\'s fibre reinforcement — you skip the fibreglass matting step, saving time and cost. Sika has the widest product range and is most widely specified by engineers for commercial projects. For standard residential roof waterproofing, Bostik AC2 is an excellent and competitive choice.',
+    answer:
+      "They excel in different areas. Bostik's key advantage is Boscoseal AC2's fibre reinforcement — you skip the fibreglass matting step, saving time and cost. Sika has the widest product range and is most widely specified by engineers for commercial projects. For standard residential roof waterproofing, Bostik AC2 is an excellent and competitive choice.",
   },
 ]
 
-const relatedGuides = guidePages.filter((p) => p.slug !== 'bostik-waterproofing').slice(0, 4)
+const BOSTIK_INTRO =
+  "Bostik is one of the world's oldest adhesive and waterproofing brands — founded in 1889 and now owned by Arkema Group, a French multinational with €8.7 billion in revenue and operations in 50+ countries. In Malaysia, Bostik's waterproofing range is marketed under the \u201cSeal & Block\u201d umbrella and spans DIY-friendly acrylic coatings to high-performance polyurethane membranes. This guide covers every Bostik waterproofing product available in Malaysia, including verified 2026 pricing and a head-to-head comparison against Sika and Pentens."
 
 export default function BostikWaterproofingPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-primary-900 to-primary-700 py-16">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="inline-block rounded-full bg-violet-600/30 px-3 py-1 text-sm font-medium text-violet-200 mb-4">
-            Product Review
-          </div>
-          <h1 className="text-4xl font-bold text-white md:text-5xl leading-tight">
-            Bostik Waterproofing Malaysia 2026 — Complete Product Guide &amp; Prices
-          </h1>
-          <p className="mt-4 text-xl text-gray-200">
-            Complete guide to Bostik waterproofing products in Malaysia 2026. Compare Boscoseal AC2, PUW, RC2 prices, application methods, and see how Bostik compares to Sika and Pentens.
-          </p>
-        </div>
-      </section>
-
-      <section className="py-12">
-        <div className="container mx-auto px-4 max-w-4xl space-y-10">
-
-          {/* Intro */}
-          <div className="bg-white rounded-xl shadow-sm p-8">
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Bostik is one of the world&apos;s oldest adhesive and waterproofing brands — founded in 1889 and now owned by <strong>Arkema Group</strong>, a French multinational with €8.7 billion in revenue and operations in 50+ countries. In Malaysia, Bostik&apos;s waterproofing range is marketed under the <strong>&quot;Seal &amp; Block&quot;</strong> umbrella and spans DIY-friendly acrylic coatings to high-performance polyurethane membranes. This guide covers every Bostik waterproofing product available in Malaysia, including verified 2026 pricing and a head-to-head comparison against Sika and Pentens.
-            </p>
-          </div>
-
-          {/* Product Range */}
-          <div className="bg-white rounded-xl shadow-sm p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Complete Bostik Waterproofing Product Range</h2>
-            <div className="space-y-3">
-              {products.map((product) => (
-                <div key={product.name} className="border border-gray-200 rounded-lg p-4 hover:border-primary-200 transition-colors">
-                  {/* Header row */}
-                  <div className="flex flex-wrap items-center gap-2 mb-1">
-                    <h3 className="text-sm font-bold text-gray-900">{product.name}</h3>
-                    {product.badge && (
-                      <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${product.badgeColor}`}>
-                        {product.badge}
-                      </span>
-                    )}
-                    {product.price && (
-                      <span className="ml-auto text-sm font-semibold text-primary-700 whitespace-nowrap">{product.price}</span>
-                    )}
-                  </div>
-                  {/* Meta */}
-                  <p className="text-xs text-gray-500 leading-snug">
-                    <span className="font-medium text-gray-600">Type:</span> {product.type} &nbsp;·&nbsp;
-                    <span className="font-medium text-gray-600">Best for:</span> {product.bestFor}
-                  </p>
-                  {/* Features: 2-col grid on desktop */}
-                  <ul className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-0.5">
-                    {product.features.map((f) => (
-                      <li key={f} className="flex items-start gap-1.5 text-xs text-gray-600">
-                        <CheckCircle className="h-3.5 w-3.5 text-green-500 shrink-0 mt-0.5" />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Pricing Table */}
-          <div className="bg-white rounded-xl shadow-sm p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Bostik Waterproofing Prices in Malaysia 2026</h2>
-            <p className="text-sm text-gray-500 mb-6">Verified January 2026. Prices may vary by retailer.</p>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm border-collapse">
-                <thead>
-                  <tr className="bg-primary-900 text-white">
-                    <th className="text-left px-4 py-3 rounded-tl-lg font-semibold">Product</th>
-                    <th className="text-left px-4 py-3 font-semibold">Size</th>
-                    <th className="text-left px-4 py-3 font-semibold">Price (RM)</th>
-                    <th className="text-left px-4 py-3 rounded-tr-lg font-semibold">Type</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    { product: 'Boscoseal AC2', size: '20kg', price: '~RM380', type: 'Acrylic fibre membrane', highlight: true },
-                    { product: 'Boscoseal AC2', size: '5kg', price: '~RM112', type: 'Acrylic fibre membrane', highlight: false },
-                    { product: 'Boscoseal PUW', size: '20kg', price: '~RM400–500', type: 'PU membrane', highlight: true },
-                    { product: 'Boscoseal 16', size: 'per roll', price: '~RM200–300', type: 'Sheet membrane', highlight: false },
-                  ].map((row, i) => (
-                    <tr key={i} className={row.highlight ? 'bg-primary-50' : 'bg-white'}>
-                      <td className="px-4 py-3 font-medium text-gray-900 border-b border-gray-100">{row.product}</td>
-                      <td className="px-4 py-3 text-gray-600 border-b border-gray-100">{row.size}</td>
-                      <td className="px-4 py-3 font-semibold text-primary-700 border-b border-gray-100">{row.price}</td>
-                      <td className="px-4 py-3 text-gray-600 border-b border-gray-100">{row.type}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <p className="mt-4 text-sm text-gray-500 italic">
-              Pro tip: Boscoseal AC2&apos;s built-in fibre reinforcement eliminates the need to purchase separate fibreglass matting (which adds RM30–80 to Sika/Pentens jobs), making the total installed cost competitive.
-            </p>
-          </div>
-
-          {/* Comparison Table */}
-          <div className="bg-white rounded-xl shadow-sm p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Bostik vs Sika vs Pentens — Which Should You Choose?</h2>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm border-collapse">
-                <thead>
-                  <tr className="bg-gray-800 text-white">
-                    <th className="text-left px-4 py-3 rounded-tl-lg font-semibold">Feature</th>
-                    <th className="text-left px-4 py-3 font-semibold text-orange-300">Bostik</th>
-                    <th className="text-left px-4 py-3 font-semibold text-blue-300">Sika</th>
-                    <th className="text-left px-4 py-3 rounded-tr-lg font-semibold text-green-300">Pentens</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-100">
-                  {[
-                    { feature: 'Parent company', bostik: 'Arkema (France)', sika: 'Sika AG (Switzerland)', pentens: 'Pentens (Malaysia)' },
-                    { feature: 'Market position', bostik: '#3 in Malaysia', sika: '#1 in Malaysia', pentens: '#2 in Malaysia' },
-                    { feature: 'Price range', bostik: 'Mid–premium', sika: 'Budget to premium', pentens: 'Budget–mid' },
-                    { feature: 'Product range', bostik: 'Wide (8+ products)', sika: 'Widest (10+ products)', pentens: 'Moderate (5–6)' },
-                    { feature: 'Roof specialist', bostik: 'Boscoseal AC2', sika: 'SikaFill MY', pentens: 'Pentens T200' },
-                    { feature: 'Key advantage', bostik: 'Fibre-reinforced — no matting needed', sika: 'Cheapest entry (RM65)', pentens: 'Local brand, budget-king' },
-                    { feature: 'Best for', bostik: 'DIY — single-product solution', sika: 'Commercial, certified systems', pentens: 'Price-sensitive residential' },
-                  ].map((row, i) => (
-                    <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                      <td className="px-4 py-3 font-medium text-gray-900">{row.feature}</td>
-                      <td className="px-4 py-3 text-gray-700">{row.bostik}</td>
-                      <td className="px-4 py-3 text-gray-700">{row.sika}</td>
-                      <td className="px-4 py-3 text-gray-700">{row.pentens}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          {/* Application Steps */}
-          <div className="bg-white rounded-xl shadow-sm p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">How to Apply Bostik Boscoseal AC2 (Step-by-Step)</h2>
-            <p className="text-sm text-gray-500 mb-6">Boscoseal AC2 is the most popular Bostik product for DIY roof and bathroom waterproofing.</p>
-            <ol className="space-y-4">
-              {applicationSteps.map((s) => (
-                <li key={s.step} className="flex gap-4">
-                  <span className="flex-none flex items-center justify-center h-8 w-8 rounded-full bg-primary-900 text-white text-sm font-bold">
-                    {s.step}
-                  </span>
-                  <div>
-                    <p className="font-semibold text-gray-900">{s.title}</p>
-                    <p className="text-sm text-gray-600 mt-0.5">{s.detail}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-            <div className="mt-6 rounded-lg bg-accent-50 border border-accent-200 p-4 text-sm text-accent-900">
-              <strong>Pro tip:</strong> Boscoseal AC2&apos;s fibre reinforcement means you skip the fibreglass matting step that Sika and Pentens products require — one less product to buy and one less application step.
-            </div>
-          </div>
-
-          {/* Where to Buy */}
-          <div className="bg-white rounded-xl shadow-sm p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Where to Buy Bostik Waterproofing in Malaysia</h2>
-            <div className="grid sm:grid-cols-2 gap-6">
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-3">Online</h3>
-                <ul className="space-y-2 text-sm text-gray-700">
-                  <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 shrink-0 mt-0.5" />Shopee Malaysia — search &quot;Bostik Boscoseal&quot;</li>
-                  <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 shrink-0 mt-0.5" />Lazada Malaysia — search &quot;Bostik waterproofing&quot;</li>
-                  <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 shrink-0 mt-0.5" />eWarehouse.my — full Boscoseal range</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-3">Physical Stores</h3>
-                <ul className="space-y-2 text-sm text-gray-700">
-                  <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 shrink-0 mt-0.5" />Hardware stores nationwide (use Bostik dealer locator)</li>
-                  <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 shrink-0 mt-0.5" />Chin Chun Hardware (Shah Alam, Selangor)</li>
-                  <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 shrink-0 mt-0.5" />VelocityDIY (Johor Bahru)</li>
-                  <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 shrink-0 mt-0.5" />Mr. DIY (selected products)</li>
-                </ul>
-              </div>
-            </div>
-            <p className="mt-4 text-sm text-gray-500">
-              Bostik Malaysia website: bostik.com/malaysia · Dealer locator: bostik.com/malaysia/en/resources-tools/dealer-locator
-            </p>
-          </div>
-
-          {/* FAQ */}
-          <div className="bg-white rounded-xl shadow-sm p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
-            <div className="space-y-6">
-              {faq.map((item, i) => (
-                <div key={i} className="border-b border-gray-100 pb-6 last:border-0 last:pb-0">
-                  <h3 className="text-base font-semibold text-gray-900 mb-2">{item.question}</h3>
-                  <p className="text-sm text-gray-700 leading-relaxed">{item.answer}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* CTA */}
-          <div className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-xl shadow-xl p-8 text-center">
-            <h2 className="text-2xl font-bold text-white mb-3">Need a Professional Waterproofing Contractor?</h2>
-            <p className="text-gray-200 mb-6">
-              Browse verified roof repair and waterproofing contractors across all 16 Malaysian states. Get free quotes and compare prices.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/listings">
-                <Button variant="gold" size="lg">
-                  Browse Contractors
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-              <Link href="/guides/waterproofing-malaysia">
-                <Button variant="outline" size="lg" className="bg-white/10 text-white border-white hover:bg-white/20">
-                  Waterproofing Guide
-                </Button>
-              </Link>
-            </div>
-          </div>
-
-          {/* Related Guides */}
-          <div>
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Related Guides</h3>
-            <div className="grid gap-4 md:grid-cols-2">
-              {relatedGuides.map((g) => (
-                <Link
-                  key={g.slug}
-                  href={`/guides/${g.slug}`}
-                  className="block p-4 border border-gray-200 rounded-lg hover:border-primary-300 hover:shadow-md transition-all bg-white"
-                >
-                  <h4 className="font-semibold text-gray-900 mb-1 text-sm">{g.h1}</h4>
-                  <p className="text-xs text-gray-500 line-clamp-2">{g.description}</p>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Last updated */}
-          <div className="text-center text-sm text-gray-500">
-            Last updated: January 2026 |{' '}
-            <Link href="/" className="text-primary-600 hover:underline">{siteConfig.siteName}</Link>
-          </div>
-
-        </div>
-      </section>
-    </div>
+    <GuideTemplate
+      slug="bostik-waterproofing"
+      hero={{
+        title: 'Bostik Waterproofing Malaysia 2026 — Complete Product Guide & Prices',
+        description:
+          'Compare Boscoseal AC2, PUW, RC2 prices, application methods, and see how Bostik compares to Sika and Pentens.',
+        category: 'Product Review',
+        categoryBg: 'bg-violet-500/30',
+        categoryText: 'text-violet-100',
+      }}
+      intro={BOSTIK_INTRO}
+      sections={sections}
+      faq={faq}
+      publishDate="January 2026"
+      ctaLinks={[
+        { label: 'Browse Contractors', href: '/listings', variant: 'gold' },
+        { label: 'Waterproofing Guide', href: '/guides/waterproofing-malaysia', variant: 'outline' },
+      ]}
+    />
   )
 }

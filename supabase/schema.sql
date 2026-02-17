@@ -77,6 +77,12 @@ CREATE TABLE inquiries_roofrepair (
   -- Additional Message
   message TEXT,
 
+  -- Issue Type (service category from form: "Roof Leak Repair", "Waterproofing", etc.)
+  issue_type TEXT,
+
+  -- Lead Status
+  status TEXT DEFAULT 'new', -- "new", "contacted", "quoted", "won", "lost"
+
   -- Timestamp
   created_at TIMESTAMPTZ DEFAULT NOW()
 );

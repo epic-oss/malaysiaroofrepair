@@ -10,7 +10,7 @@ export const inquirySchema = z.object({
   lead_company: z.string().optional(),
   property_type: z.string().optional(),
   roof_type: z.string().optional(),
-  problem_description: z.string().min(20, 'Please provide more details (minimum 20 characters)'),
+  problem_description: z.string().min(10, 'Please provide more details (minimum 10 characters)'),
   urgency: z.string().optional(),
   location: z.string().min(2, 'Location is required'),
   preferred_date: z.string().optional(),
