@@ -6,9 +6,9 @@ import { Modal } from './Modal'
 import { BroadcastLeadForm } from '../forms/BroadcastLeadForm'
 
 const SOCIAL_PROOF = [
-  '✓ 2,300+ Homeowners Connected with Roofers',
-  '✓ Average Response Time: Under 2 Hours',
-  '✓ Free Quotes, No Obligation',
+  '✓ 12,400+ Roofs Repaired & Waterproofed',
+  '✓ Trusted by Homeowners Across 16 States',
+  '✓ Get Free Quotes in Under 2 Minutes',
 ]
 
 export function FloatingButton() {
