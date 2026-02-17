@@ -69,6 +69,23 @@ export interface ProsConsSection {
   cons: string[]
 }
 
+export interface CoatingTypeCard {
+  num: number
+  name: string
+  oneLine: string
+  bestFor: string
+  pros: string[]
+  cons: string[]
+  popular: string
+  priceRange: string
+}
+
+export interface CoatingTypesSection {
+  type: 'coating-types'
+  heading: string
+  cards: CoatingTypeCard[]
+}
+
 export type GuideSection =
   | TextSection
   | StepsSection
@@ -77,6 +94,7 @@ export type GuideSection =
   | PricingTableSection
   | WhereToBuySection
   | ProsConsSection
+  | CoatingTypesSection
 
 export interface GuideTemplateProps {
   slug: string
@@ -88,6 +106,7 @@ export interface GuideTemplateProps {
     categoryText?: string
   }
   intro: string
+  introStat?: string
   sections: GuideSection[]
   faq?: FaqItem[]
   publishDate?: string
@@ -489,6 +508,61 @@ function RenderProsConsSection({ section }: { section: ProsConsSection }) {
   )
 }
 
+function RenderCoatingTypesSection({ section }: { section: CoatingTypesSection }) {
+  return (
+    <div className="space-y-4">
+      {section.cards.map((card) => (
+        <div key={card.num} className="border border-gray-200 rounded-lg overflow-hidden">
+          {/* Header */}
+          <div className="flex items-center gap-3 px-4 py-3 bg-gray-50 border-b border-gray-200">
+            <span className="flex-none flex items-center justify-center h-7 w-7 rounded-full bg-primary-900 text-white text-xs font-bold shrink-0">
+              {card.num}
+            </span>
+            <h3 className="font-bold text-gray-900 text-sm">{card.name}</h3>
+          </div>
+          {/* Body */}
+          <div className="px-4 py-4 space-y-3">
+            <p className="text-sm text-gray-700 leading-relaxed">{card.oneLine}</p>
+            <p className="text-xs font-medium text-primary-700">
+              <span className="text-gray-500">Best for:</span> {card.bestFor}
+            </p>
+            {/* Pros & Cons */}
+            <div className="grid sm:grid-cols-2 gap-3">
+              <div>
+                <p className="text-xs font-bold text-green-700 uppercase tracking-wide mb-1.5">Pros</p>
+                <ul className="space-y-1">
+                  {card.pros.map((item, i) => (
+                    <li key={i} className="flex items-start gap-1.5 text-xs text-gray-700">
+                      <CheckCircle className="h-3.5 w-3.5 text-green-500 shrink-0 mt-0.5" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p className="text-xs font-bold text-red-600 uppercase tracking-wide mb-1.5">Cons</p>
+                <ul className="space-y-1">
+                  {card.cons.map((item, i) => (
+                    <li key={i} className="flex items-start gap-1.5 text-xs text-gray-700">
+                      <XCircle className="h-3.5 w-3.5 text-red-400 shrink-0 mt-0.5" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            {/* Popular + Price */}
+            <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs text-gray-600 border-t border-gray-100 pt-3">
+              <span><span className="font-medium text-gray-900">Popular in Malaysia:</span> {card.popular}</span>
+              <span><span className="font-medium text-gray-900">Price range:</span> {card.priceRange}</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 function renderSection(section: GuideSection): React.ReactNode {
   switch (section.type) {
     case 'text':
@@ -505,6 +579,8 @@ function renderSection(section: GuideSection): React.ReactNode {
       return <RenderWhereToBuySection section={section} />
     case 'pros-cons':
       return <RenderProsConsSection section={section} />
+    case 'coating-types':
+      return <RenderCoatingTypesSection section={section} />
   }
 }
 
@@ -514,6 +590,7 @@ export default function GuideTemplate({
   slug,
   hero,
   intro,
+  introStat,
   sections,
   faq,
   publishDate,
@@ -556,7 +633,16 @@ export default function GuideTemplate({
 
               {/* Intro */}
               <div className="bg-white rounded-xl shadow-sm p-7 border border-gray-100">
-                <p className="text-base text-gray-700 leading-relaxed">{intro}</p>
+                {introStat && (
+                  <div className="mb-5 rounded-lg bg-primary-50 border border-primary-200 px-4 py-3 text-sm font-medium text-primary-800">
+                    {introStat}
+                  </div>
+                )}
+                {intro.split('\n\n').map((para, i) => (
+                  <p key={i} className={`text-base text-gray-700 leading-relaxed${i > 0 ? ' mt-4' : ''}`}>
+                    {para}
+                  </p>
+                ))}
               </div>
 
               {/* Sections */}

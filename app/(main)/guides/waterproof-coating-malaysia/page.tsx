@@ -1,6 +1,7 @@
 import GuideTemplate, {
   type GuideSection,
   type ProductCard,
+  type CoatingTypeCard,
 } from '@/components/guides/GuideTemplate'
 
 export const metadata = {
@@ -97,44 +98,64 @@ const products: ProductCard[] = [
   },
 ]
 
+const coatingTypes: CoatingTypeCard[] = [
+  {
+    num: 1,
+    name: 'Acrylic Waterproof Coatings',
+    oneLine: 'Water-based, flexible polymer coatings. The most widely used type in Malaysia for exposed roofs, walls, and balconies.',
+    bestFor: 'Exposed roofs, exterior walls, balconies',
+    pros: ['DIY-friendly — brush or roller application', 'Low odour, safe for indoor use', 'UV resistant and breathable', 'Quick drying (4–6 hours between coats)'],
+    cons: ['Less elastic than PU — limited crack bridging', 'Needs recoating every 5–8 years'],
+    popular: 'Nippon Flex 200, SikaFill MY / SikaCoat 300 Cool, Boscoseal AC2, Pentens T200, QingLong QL-Roofing',
+    priceRange: 'RM65–380 per pail',
+  },
+  {
+    num: 2,
+    name: 'Polyurethane (PU) Waterproof Coatings',
+    oneLine: 'Single or two-component PU-based liquid membranes. Highly elastic — best for flat roofs, high-movement structures, and fish ponds.',
+    bestFor: 'Flat roofs, balconies, fish ponds, high-movement structures',
+    pros: ['Highly elastic — superior crack bridging', 'Long-lasting: 10–15 years', 'Excellent performance in Malaysian heat and rain'],
+    cons: ['Stronger odour during application', 'Some products require two-part mixing', 'More expensive than acrylic'],
+    popular: 'Boscoseal PUW, Pentens T100 (PU bituminous), Sika Brushcoat WP',
+    priceRange: 'RM70–500 per pail',
+  },
+  {
+    num: 3,
+    name: 'Cementitious Waterproof Coatings',
+    oneLine: 'Cement-based two-part systems (powder + liquid polymer). Ideal for wet areas in contact with potable water.',
+    bestFor: 'Bathrooms, wet areas, water tanks, swimming pools, basements',
+    pros: ['Bonds exceptionally well to concrete', 'Non-toxic — safe for water tanks and pools', 'Can tile directly over when cured', 'Lowest cost entry-point'],
+    cons: ['Not flexible — cracks under structural movement', 'Not suitable for exposed or dynamic surfaces like roofs'],
+    popular: 'SikaTop Seal-107, Sikalastic-1 KMY, Boscoflex, Boscolastic',
+    priceRange: 'RM65–250 per set',
+  },
+  {
+    num: 4,
+    name: 'Bituminous Waterproof Coatings',
+    oneLine: 'Asphalt/tar-based liquid coatings. Best for foundations and below-grade structures where UV exposure is not a concern.',
+    bestFor: 'Foundations, basements, below-grade and buried structures',
+    pros: ['Excellent water barrier', 'Very durable below grade', 'Cost-effective for large areas'],
+    cons: ['Not UV resistant — must be covered or backfilled', 'Strong smell during application', 'Black colour only'],
+    popular: 'Sika Igolflex R, Boscoseal PUR, Pentens T100',
+    priceRange: 'RM100–300 per pail',
+  },
+  {
+    num: 5,
+    name: 'Nano Waterproof Coatings',
+    oneLine: 'Invisible nanotechnology-based spray coatings for tile surfaces, external walls, and sealing hairline cracks.',
+    bestFor: 'Tile surfaces, external walls, hairline crack sealing',
+    pros: ['Completely invisible after application', 'Easy spray application — no tools needed', 'Seals hairline cracks immediately'],
+    cons: ['Not suitable for active leaks or heavy water ingress', 'Shorter lifespan than membrane coatings', 'Not a substitute for full waterproofing on roofs or bathrooms'],
+    popular: 'Nano-G products, Jaysuing spray (Shopee/Lazada)',
+    priceRange: 'RM15–150 per bottle',
+  },
+]
+
 const sections: GuideSection[] = [
   {
-    type: 'text',
+    type: 'coating-types',
     heading: 'Types of Waterproof Coatings Explained',
-    content: `**1. Acrylic Waterproof Coatings**
-Water-based, flexible polymer coatings. Best for exposed roofs, walls, and balconies.
-Pros: DIY-friendly, low odour, UV resistant, breathable, quick drying.
-Cons: Less elastic than PU, needs recoating every 5–8 years.
-Popular in Malaysia: Nippon Flex 200, SikaFill MY / SikaCoat 300 Cool, Boscoseal AC2, Pentens T200, QingLong QL-Roofing.
-Price range: RM65–380/pail depending on brand and size.
-
-**2. Polyurethane (PU) Waterproof Coatings**
-Single or two-component PU-based liquid membranes. Best for flat roofs, high-elasticity requirements, balconies, and fish ponds.
-Pros: Highly elastic, excellent crack bridging, long-lasting (10–15 years).
-Cons: Stronger odour, some require mixing, more expensive.
-Popular in Malaysia: Boscoseal PUW, Pentens T100 (PU bituminous), Sika Brushcoat WP.
-Price range: RM70–500/pail.
-
-**3. Cementitious Waterproof Coatings**
-Cement-based two-part systems (powder + liquid polymer). Best for bathrooms, swimming pools, water tanks, and below-grade structures.
-Pros: Bonds exceptionally well to concrete, rigid protection, can tile directly over.
-Cons: Not flexible — cracks with structural movement, not for exposed areas.
-Popular in Malaysia: SikaTop Seal-107, Sikalastic-1 KMY, Boscoflex, Boscolastic.
-Price range: RM65–250/set.
-
-**4. Bituminous Waterproof Coatings**
-Asphalt/tar-based liquid coatings. Best for foundations, basements, and below-grade structures.
-Pros: Excellent water barrier, very durable, cost-effective.
-Cons: Not UV resistant (must be covered), strong smell, black colour only.
-Popular in Malaysia: Sika Igolflex R, Boscoseal PUR, Pentens T100.
-Price range: RM100–300/pail.
-
-**5. Nano Waterproof Coatings**
-Invisible nanotechnology-based spray coatings. Best for tile surfaces, walls, and hairline crack sealing.
-Pros: Invisible, easy spray application, seals hairline cracks immediately.
-Cons: Not suitable for active leaks or heavy water ingress, shorter lifespan.
-Popular in Malaysia: Nano-G products, Jaysuing spray (Shopee/Lazada).
-Price range: RM15–150/bottle.`,
+    cards: coatingTypes,
   },
   {
     type: 'products',
@@ -258,7 +279,12 @@ export default function WaterproofCoatingMalaysiaPage() {
         categoryBg: 'bg-teal-500/30',
         categoryText: 'text-teal-100',
       }}
-      intro="Malaysia's tropical climate — average 2,500mm of annual rainfall, year-round humidity above 70%, and intense UV exposure — makes waterproof coatings essential for any building. But not all coatings are equal: the right product depends on your surface type, budget, whether you're doing it yourself, and how long you need it to last. This guide covers every type of waterproof coating available in Malaysia, verified 2026 pricing across the top brands, a step-by-step application guide, and a use-case decision chart so you pick the right product first time."
+      intro={`Malaysia's tropical climate makes waterproof coatings essential for any building. Without proper protection, water infiltrates concrete, steel corrodes, and mould takes hold within days of a leak.
+
+But not all coatings are equal. The right product depends on your surface type (roof, bathroom, basement), budget, whether you're applying it yourself, and how long you need it to last. Acrylic, polyurethane, cementitious, bituminous, and nano coatings each perform very differently — and choosing the wrong type is a common and costly mistake.
+
+This guide covers every type of waterproof coating available in Malaysia, verified 2026 pricing across the top brands (Nippon, Sika, Bostik, Pentens, QingLong), a step-by-step DIY application guide, and a use-case decision chart so you pick the right product first time.`}
+      introStat="Malaysia averages 2,500mm of annual rainfall · 70%+ humidity year-round · Intense UV exposure — one of the most demanding climates for waterproofing in the world."
       sections={sections}
       faq={faq}
       publishDate="January 2026"
