@@ -9,14 +9,15 @@ export const metadata = {
     'Expert guides on roof repair, waterproofing, and roofing products in Malaysia. Learn about costs, brands, and how to find the right contractor.',
 }
 
-type Category = 'Waterproofing' | 'Roof Repair' | 'Product Review' | 'Cost Guide' | 'Product Guide'
+type Category = 'Waterproofing' | 'Roof Repair' | 'Product Review' | 'Cost Guide' | 'Product Guide' | 'Emergency Repair'
 
 const CATEGORY_STYLES: Record<Category, string> = {
-  Waterproofing:    'bg-blue-50 text-blue-700',
-  'Roof Repair':    'bg-orange-50 text-orange-700',
-  'Product Review': 'bg-violet-50 text-violet-700',
-  'Cost Guide':     'bg-green-50 text-green-700',
-  'Product Guide':  'bg-teal-50 text-teal-700',
+  Waterproofing:      'bg-blue-50 text-blue-700',
+  'Roof Repair':      'bg-orange-50 text-orange-700',
+  'Product Review':   'bg-violet-50 text-violet-700',
+  'Cost Guide':       'bg-green-50 text-green-700',
+  'Product Guide':    'bg-teal-50 text-teal-700',
+  'Emergency Repair': 'bg-red-50 text-red-700',
 }
 
 const SLUG_CATEGORIES: Record<string, Category> = {
@@ -27,6 +28,7 @@ const SLUG_CATEGORIES: Record<string, Category> = {
   'how-to-fix-roof-leak':          'Roof Repair',
   'bostik-waterproofing':          'Product Review',
   'waterproof-coating-malaysia':   'Product Guide',
+  'water-leaking-from-ceiling':    'Emergency Repair',
 }
 
 function getCategory(slug: string): Category {

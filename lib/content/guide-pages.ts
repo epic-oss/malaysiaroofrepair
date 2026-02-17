@@ -426,4 +426,76 @@ export const guidePages: GuidePage[] = [
       ],
     },
   },
+  {
+    slug: 'water-leaking-from-ceiling',
+    title: `Water Leaking From Ceiling? Here's What to Do (Malaysia Guide 2026)`,
+    description:
+      'Water leaking from your ceiling in Malaysia? Emergency guide with immediate steps, causes (roof, plumbing, AC, waterproofing failure), repair costs, and your rights for condo inter-floor leakage.',
+    h1: `Water Leaking From Ceiling? Here's What to Do (Malaysia Guide 2026)`,
+    targetKeyword: 'water leaking from ceiling',
+    monthlySearchVolume: 630,
+    content: {
+      intro:
+        "Seeing water drip from your ceiling is alarming — and in Malaysia's tropical climate, it needs to be treated as an emergency. Whether the leak is coming through during heavy rain, appearing near your air-conditioner, or seeping down from the bathroom above, the first 30 minutes of your response matter. This guide tells you exactly what to do right now, walks through every common cause, explains your legal rights if you're in a condo, and gives you verified repair costs so you know what to expect.",
+      sections: [
+        {
+          heading: 'What to Do RIGHT NOW — Emergency Steps',
+          content:
+            'If water is actively dripping from your ceiling, act in this order:\n\n1. Turn off electricity in the affected area. Water reaching electrical wiring is an electrocution risk. Locate your distribution board (DB box) and switch off the breaker for the affected room immediately.\n\n2. Place buckets or containers directly under the drip to catch water and prevent floor damage.\n\n3. Move furniture, electronics, and valuables away from the leak area. Computers, televisions, and soft furnishings are most at risk.\n\n4. If the ceiling is bulging or sagging — this means water is pooling above the plasterboard. Poke a small hole at the centre of the bulge with a screwdriver and direct the water into a bucket. This controlled release prevents a sudden ceiling collapse.\n\n5. Take photos and video of the leak, the stain, and any damage. This is essential for insurance documentation.\n\n6. Check the floor above. Is there a bathroom, balcony, or planter box directly above the leak? Look for pooling water, overflowing trays, or dripping pipes.\n\n7. Call a waterproofing specialist or licensed plumber depending on what you find. If the cause is unclear, a waterproofing specialist can perform a diagnostic inspection.\n\nCritical warning: Do not ignore a ceiling leak even if it appears minor and stops. In Malaysia\'s humidity, mould begins growing within 24–48 hours of water saturation. Mould causes respiratory problems and is costly to remediate once established.',
+        },
+        {
+          heading: 'Common Causes of Ceiling Leaks in Malaysia',
+          content:
+            '**1. Roof Damage — Most common in landed houses**\nCracked or broken roof tiles after storms, a damaged roof ridge, worn-out waterproofing membrane on a flat concrete slab, or clogged gutters causing overflow are all frequent culprits.\nHow to identify: The leak worsens noticeably during or immediately after heavy rain. Stains appear on the upper floor ceiling or directly below the roof slab.\nFix: Roof tile replacement, waterproofing membrane reapplication, gutter clearing.\n\n**2. Plumbing Leak — Most common in condos and apartments**\nBurst or corroded pipes hidden in walls or ceilings, leaking pipe joints, faulty toilet seals, or shower traps.\nHow to identify: The leak is consistent regardless of weather. To confirm: turn off all taps and watch your water meter. If it still moves, you have a pipe leak.\nFix: Licensed plumber to locate and repair or replace the pipe.\n\n**3. Bathroom or Toilet Waterproofing Failure — Very common in Malaysia**\nOriginal waterproofing membrane has deteriorated. Extremely common in buildings over 10 years old. The upper floor bathroom leaks through the slab into the ceiling below.\nHow to identify: Leak originates directly below a bathroom or toilet. May have a slight musty smell. White mineral deposits (efflorescence) on the concrete surface are a strong indicator.\nDiagnostic test: Block the waste pipe of the suspect bathroom, fill the floor with water to 50mm depth, monitor the ceiling below for 24 hours.\nFix: Re-waterproof the bathroom floor — this typically requires hacking the tiles.\n\n**4. Air-Conditioning Condensation**\nA clogged AC drainage pipe causes condensate to back up and overflow. Poorly insulated copper pipes also produce condensation drips.\nHow to identify: Dripping appears near or directly below your indoor AC unit. The flow is slow and consistent rather than heavy.\nFix: Service the AC unit, clear the drainage pipe with wire or compressed air, insulate copper pipes.\n\n**5. Balcony or Car Porch Slab Leaking**\nFailed waterproofing on an external slab, poor drainage slope causing water to pool, or hairline cracks in the concrete.\nHow to identify: Leak appears below the balcony or car porch area, worsens after rain.\nFix: PU injection into cracks, re-waterproofing the slab, correcting the floor slope with re-screeding.',
+        },
+        {
+          heading: 'How to Identify the Source of Your Ceiling Leak',
+          content:
+            'Use this diagnostic table to narrow down the cause:\n\nLeak only during or after rain → Roof damage or external waterproofing failure\nConsistent fast drip regardless of rain → Burst or leaking water pipe\nConsistent drip with foul smell → Waste or sewage pipe leak\nConsistent drip, no smell, white mineral deposits on concrete → Waterproofing membrane failure\nDrip near AC unit location → Clogged AC drain or condensation buildup\nStain on ceiling but no active drip → Intermittent leak — still needs professional inspection\nCeiling visibly bulging or sagging → Water pooling above — act immediately, risk of collapse\n\nFor condos and apartments — inter-floor leakage:\nUnder Malaysia\'s Strata Management Regulations (SMR) 2015, the owner of the upper floor unit is presumed responsible for leaks caused by their unit. The building management body (JMB or MC) is required to inspect within 7 days of a formal complaint. If the upper floor owner refuses to cooperate, you can file a complaint with the Strata Management Tribunal. Non-cooperation fines can reach RM50,000. Keep all evidence (photos, videos, written complaints) throughout this process.',
+        },
+        {
+          heading: 'Repair Solutions & Estimated Costs',
+          content:
+            'DIY fixes (minor issues only):\n• Sealant patching — apply waterproof sealant to small accessible cracks: RM10–30\n• Clear AC drain — use wire or compressed air to unblock the drainage pipe: RM0 (DIY)\n• Waterproof ceiling repaint — after fixing the source, repaint with anti-mould paint: RM50–150 for paint\n\nNote: DIY fixes only address symptoms. If the underlying cause is plumbing, waterproofing failure, or roof damage, professional repair is mandatory.\n\nProfessional solutions with cost ranges (verified January 2026):\n\nPU Injection — concrete cracks and slab leaks: RM200–500 per injection point | 1–3 days\nWaterproofing membrane — bathroom or roof slab: RM1,500–8,000 | 3–7 days\nPipe repair or replacement — plumbing leaks: RM200–2,000 | Same day to 2 days\nRoof tile repair — damaged tiles: RM300–1,500 | 1–2 days\nNano-coating treatment — hairline cracks and tile sealing: RM800–3,000 | 1 day\nFull re-waterproofing — major waterproofing failure: RM3,000–15,000 | 5–14 days\nPlaster ceiling repair or replacement — water-damaged boards: RM150–2,000 | 1–2 days\n\nImportant: Costs in Klang Valley (KL/Selangor) are typically 20–30% higher than other states. Always obtain at least 3 quotes before committing.',
+        },
+        {
+          heading: 'How to Prevent Ceiling Leaks in Malaysia',
+          content:
+            'Malaysia\'s monsoon seasons (October–February on the Peninsula west coast and November–March on the east coast) put roofs and waterproofing under maximum stress. Prepare before the rains arrive:\n\n• Inspect your roof before monsoon season. Check for cracked, slipped, or missing tiles, damaged ridge caps, and rust on zinc roofs. Clear all gutters and downpipes.\n\n• Service your AC units every 3–6 months. A professional service includes clearing the drainage pipe — the most common cause of AC-related ceiling drips.\n\n• Check bathroom grout and waterproofing. If grout lines are cracking, discoloured, or missing, the waterproof layer below may already be compromised. Get it inspected before it becomes a leak.\n\n• Clean gutters at least twice a year. Leaf debris causes overflow that saturates wall junctions and window frames.\n\n• Consider smart leak detectors. Affordable sensors (RM80–200) placed near AC units, under sinks, and in utility areas will alert you on your phone before damage spreads.\n\n• Schedule a building inspection for condos. Under the Strata Management Act, periodic building inspections are required. Ensure your JMB or MC is conducting these.',
+        },
+      ],
+      faq: [
+        {
+          question: 'Is water leaking from the ceiling dangerous?',
+          answer:
+            'Yes — in several ways. Water reaching electrical wiring in the ceiling void creates an electrocution risk (always turn off the circuit breaker first). In Malaysia\'s humidity, mould begins growing within 24–48 hours of saturation, causing respiratory problems. Prolonged leaks cause structural damage to concrete, steel reinforcement, and timber. Worst case: water pooling above a plasterboard ceiling causes it to collapse suddenly.',
+        },
+        {
+          question: 'Can I fix a ceiling leak myself?',
+          answer:
+            'Only for very minor issues, such as clearing a blocked AC drain. For plumbing leaks, roof damage, or waterproofing failure, always hire a licensed professional. Incorrect DIY repairs can make the problem significantly worse, lead to higher repair costs, and may void your home insurance claim if an insurer determines the damage resulted from improper repair attempts.',
+        },
+        {
+          question: 'Who is responsible for ceiling leak in a condo in Malaysia?',
+          answer:
+            'Under the Strata Management Regulations (SMR) 2015, the owner of the upper floor unit is presumed responsible for any leak originating from their unit. Your building\'s Joint Management Body (JMB) or Management Corporation (MC) must inspect within 7 days of a formal complaint. If the neighbour refuses to cooperate, file with the Strata Management Tribunal — penalties for non-compliance can reach RM50,000.',
+        },
+        {
+          question: 'How much does it cost to fix a ceiling leak in Malaysia?',
+          answer:
+            'Minor plaster ceiling patching starts from RM150. Plumbing pipe repair runs RM200–2,000 depending on accessibility. Bathroom re-waterproofing costs RM2,000–6,000 (more if tile hacking required). Flat roof re-waterproofing ranges from RM3,000–10,000. Full worst-case scenarios (major waterproofing failure + ceiling replacement) can reach RM15,000+. Always get 3 quotes — prices vary significantly by contractor and state.',
+        },
+        {
+          question: 'Should I claim insurance for a ceiling leak?',
+          answer:
+            'It depends on the cause. Most home insurance policies cover sudden and accidental water damage (e.g., burst pipe). Gradual deterioration, wear-and-tear, or poor maintenance are typically excluded. Check your policy wording carefully. Document everything with photos and videos before any repairs begin — insurers require evidence of the original damage.',
+        },
+        {
+          question: 'How long does a ceiling take to dry after a leak?',
+          answer:
+            'Typically 2–4 weeks depending on how much water penetrated and the material. Use fans and a dehumidifier to accelerate drying. Do not repaint or skim the ceiling until it is completely dry — painting over damp plaster traps moisture, causes the new paint to peel, and promotes hidden mould growth.',
+        },
+      ],
+    },
+  },
 ]
