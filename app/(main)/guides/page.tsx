@@ -24,6 +24,7 @@ const SLUG_CATEGORIES: Record<string, Category> = {
   'pentens-t200-review':         'Product Review',
   'roof-repair-cost-malaysia':   'Cost Guide',
   'how-to-fix-roof-leak':        'Roof Repair',
+  'bostik-waterproofing':        'Product Review',
 }
 
 function getCategory(slug: string): Category {

@@ -287,4 +287,66 @@ export const guidePages: GuidePage[] = [
       ],
     },
   },
+  {
+    slug: 'bostik-waterproofing',
+    title: `Bostik Waterproofing Malaysia 2026 — Complete Product Guide & Prices`,
+    description:
+      'Complete guide to Bostik waterproofing products in Malaysia 2026. Compare Boscoseal AC2, PUW, RC2 prices, application methods, and see how Bostik compares to Sika and Pentens.',
+    h1: `Bostik Waterproofing Malaysia 2026 — Complete Product Guide & Prices`,
+    targetKeyword: 'bostik waterproofing',
+    monthlySearchVolume: 720,
+    content: {
+      intro:
+        'Bostik is one of the world\'s oldest adhesive and waterproofing brands — founded in 1889 and now owned by Arkema Group, a French multinational with €8.7 billion in revenue and operations in 50+ countries. In Malaysia, Bostik\'s waterproofing range is marketed under the "Seal & Block" umbrella and spans everything from DIY-friendly acrylic coatings to high-performance polyurethane membranes. This guide covers every Bostik waterproofing product available in Malaysia, including verified 2026 pricing, application steps, and a head-to-head comparison against Sika and Pentens — so you can make an informed decision before buying.',
+      sections: [
+        {
+          heading: 'Complete Bostik Waterproofing Product Range',
+          content:
+            'Bostik Malaysia offers 8 specialist waterproofing products under the Boscoseal family:\n\n**1. Boscoseal AC2 / Bostik Supercoat Fiber (Most Popular)**\nType: One-part water-based acrylic polymer fibre reinforced membrane. Also sold as "Bostik Block A750".\nBest for: Exposed roofs, bathrooms, balconies, wet areas.\nKey advantage: Built-in fibre reinforcement means no separate fibreglass matting is required — a significant time and cost saving over Sika and Pentens products.\nCoverage: 1.0–1.5 kg/m² per coat (2 coats recommended).\nColors: Grey, White.\nPrice: ~RM380/20kg pail, ~RM112/5kg pail.\n\n**2. Boscoseal RC2 / Bostik Supercoat EX**\nType: Single-component acrylic flexible waterproofing coating.\nBest for: Exposed roof membranes, pipes, conduits, parapet walls.\nKey features: Water-based, bridges cracks, prevents metal corrosion, UV resistant, flexible across a wide temperature range.\n\n**3. Boscoseal PUW**\nType: One-component water-based modified polyurethane membrane.\nBest for: Premium waterproofing, high-elasticity requirements.\nKey features: No mixing required (ready to use), highly elastomeric after curing, brush/roller/trowel applied, strong adhesion to masonry, non re-emulsifying (won\'t break down with water exposure).\nPrice: ~RM400–500/20kg (Shopee/Lazada).\n\n**4. Boscolastic**\nType: Two-component elastomeric acrylic polymer cementitious coating.\nBest for: Concrete structures and suspended structures.\nKey features: Mixed on site (Part A + Part B), excellent crack bridging, accommodates structural movement, non-toxic, withstands heavy topping.\nApplications: Concrete roofs, basements, tanks.\n\n**5. Boscoflex**\nType: Two-component polymer modified cementitious waterproof coating.\nBest for: Tanking, lining, below-grade applications.\nKey features: Easy 2-part mixing, superior adhesion to concrete and cement render, abrasion resistant, can apply to damp substrates, paintable with elastic paint.\nApplications: Basements, lift pits, retaining walls.\n\n**6. Boscoseal 16**\nType: Self-adhesive rubberized bitumen sheet membrane.\nBest for: Large flat roof areas, concrete slabs.\nKey features: Self-adhesive — no torch or heat needed, self-sealing overlap edges, no seaming tape required, polyethylene film protected, stable under severe weather.\nPrice: ~RM200–300/roll.\n\n**7. Boscoseal PUR**\nType: Bitumen modified liquid-applied elastomeric membrane.\nBest for: Below-grade and foundation waterproofing.\nApplications: Foundations, basements, buried structures.\n\n**8. Boscoseal AR**\nType: Anti-root water-borne liquid applied membrane.\nBest for: Green roofs, planter boxes, landscaping areas.\nKey feature: Constrains root growth without harming plants.',
+        },
+        {
+          heading: 'Bostik Waterproofing Prices in Malaysia 2026',
+          content:
+            'Verified pricing as of January 2026 (prices may vary by retailer):\n\n**Bostik Products**\n• Boscoseal AC2 20kg pail — ~RM380\n• Boscoseal AC2 5kg pail — ~RM112\n• Boscoseal PUW 20kg — ~RM400–500\n• Boscoseal 16 (sheet membrane) — ~RM200–300/roll\n\n**Competitor Benchmark (for comparison)**\n• Sika TopSeal-107 25kg — ~RM90 (cementitious)\n• Sika Brushcoat WP 25kg — ~RM65 (acrylic)\n• SikaFill MY 20kg — ~RM220 (acrylic polymer)\n• Pentens T100 5kg — ~RM70 (PU bituminous)\n• Pentens T200 20kg — ~RM180–250 (acrylic cementitious)\n\nBostik\'s AC2 is mid-premium priced. However, the built-in fibre reinforcement eliminates the need to purchase separate fibreglass matting (which adds RM30–80 to Sika/Pentens jobs), making the total cost competitive.',
+        },
+        {
+          heading: 'Bostik vs Sika vs Pentens — Which Should You Choose?',
+          content:
+            'A direct comparison of the three most popular waterproofing brands in Malaysia:\n\n**Bostik**\n• Parent company: Arkema Group (France)\n• Market position: #3 in Malaysia\n• Price range: Mid to premium\n• Roof specialist product: Boscoseal AC2 (fibre-reinforced)\n• Key advantage: Fibre reinforcement built-in — no additional matting needed\n• Contractor preference: Growing, particularly for residential roofs\n• Best for: DIY users and contractors who want a single-product solution without matting\n\n**Sika**\n• Parent company: Sika AG (Switzerland)\n• Market position: #1 in Malaysia\n• Price range: Budget entry (Brushcoat RM65) up to premium\n• Roof specialist product: SikaFill MY\n• Key advantage: Widest product system range (10+ products), most specified by engineers\n• Best for: Commercial projects and consultants requiring a full certified system\n\n**Pentens**\n• Parent company: Pentens (Malaysia) — local brand\n• Market position: #2 in Malaysia\n• Price range: Budget to mid-range\n• Roof specialist product: Pentens T200\n• Key advantage: Local brand with good technical support; Pentens T100 is the budget-king\n• Best for: Smaller residential contractors and price-sensitive homeowners\n\n**Use-case recommendation:**\n— Exposed flat roof, DIY: Boscoseal AC2 (fibre included, no matting step)\n— Large commercial project: Sika (full certified system available)\n— Budget-conscious residential: Pentens T100 or T200\n— High-elasticity requirement: Boscoseal PUW or Sika Sikalastic',
+        },
+        {
+          heading: 'How to Apply Bostik Boscoseal AC2 (Step-by-Step)',
+          content:
+            'Boscoseal AC2 is the most popular Bostik product for DIY roof and bathroom waterproofing. Follow these steps for best results:\n\n1. Surface preparation: Clean the surface thoroughly. Remove loose material, paint, oil, and dust. Repair cracks wider than 2mm with suitable filler before waterproofing.\n\n2. Check surface moisture: The surface should be clean and free of standing water. Damp surfaces are acceptable for most applications.\n\n3. Priming: Not always required on concrete — check the Technical Data Sheet (TDS). On porous surfaces, a diluted coat of AC2 (1:1 with water) can act as primer.\n\n4. First coat: Apply by brush or roller at approximately 1.0–1.5 kg/m². Work the product into all corners, joints, and cracks. For corners and movement joints, bed in Bostik sealing tape or fabric strip.\n\n5. Drying time: Allow 4–6 hours between coats depending on weather and temperature. Do not apply in rain or if rain is expected within 4 hours.\n\n6. Second coat: Apply perpendicular to the first coat direction to ensure even coverage and eliminate pinholes.\n\n7. Full cure: 7 days for full waterproofing performance. Protect from rain for the first 24 hours.\n\n8. Tiling over: For bathroom and wet area applications, you can tile over once fully cured.\n\nPro tip: Boscoseal AC2\'s fibre reinforcement means you skip the fibreglass matting step that Sika and Pentens products require. This saves both time and material cost — one less product to purchase and one less application step.',
+        },
+        {
+          heading: 'Where to Buy Bostik Waterproofing in Malaysia',
+          content:
+            'Bostik waterproofing products are widely available across Malaysia through both online and physical channels:\n\nOnline retailers:\n• Shopee Malaysia — search "Bostik Boscoseal" for full range including smaller packs\n• Lazada Malaysia — search "Bostik waterproofing" for competitive pricing\n• eWarehouse.my — stocks the full Boscoseal range\n\nPhysical stores:\n• Hardware stores nationwide (use the Bostik dealer locator at bostik.com/malaysia)\n• Chin Chun Hardware (Shah Alam, Selangor) — stocks professional range\n• VelocityDIY (Johor Bahru)\n• Mr. DIY (selected Bostik products, mainly smaller packs)\n• Major hardware chains across all 16 states\n\nBostik Malaysia contact:\n• Website: bostik.com/malaysia\n• Dealer locator: bostik.com/malaysia/en/resources-tools/dealer-locator\n\nAlways buy from authorised dealers to ensure genuine products. Bostik products have batch codes on packaging — check the Bostik Malaysia website to verify.',
+        },
+      ],
+      faq: [
+        {
+          question: 'Is Bostik waterproofing good?',
+          answer:
+            'Yes. Bostik is backed by Arkema Group (France) with 135+ years of adhesive and waterproofing expertise and a presence in 50+ countries. The Boscoseal range is well-regarded by Malaysian contractors, particularly Boscoseal AC2 which is unique in the market for its built-in fibre reinforcement — eliminating the need for separate fibreglass matting.',
+        },
+        {
+          question: 'How long does Bostik waterproofing last?',
+          answer:
+            'Bostik waterproofing systems typically last 10–15 years with proper surface preparation and application. The polyurethane-based Boscoseal PUW can last longer in high-stress applications. Lifespan depends on UV exposure, foot traffic, surface preparation quality, and climate conditions.',
+        },
+        {
+          question: 'Can I apply Bostik waterproofing myself?',
+          answer:
+            'Yes — especially Boscoseal AC2, which is designed for easy application by brush or roller. It\'s one of the more DIY-friendly products on the market because the fibre reinforcement is pre-mixed, eliminating the tricky matting step. For roof areas larger than 50 sq metres or for below-grade (basement) applications, professional application is recommended.',
+        },
+        {
+          question: 'Is Bostik better than Sika for waterproofing?',
+          answer:
+            'They excel in different areas. Bostik\'s key advantage is Boscoseal AC2\'s fibre reinforcement — you skip the fibreglass matting step, saving time and cost. Sika has the widest product range and is most widely specified by engineers for commercial projects. For standard residential roof waterproofing, Bostik AC2 is an excellent and competitive choice.',
+        },
+      ],
+    },
+  },
 ]
