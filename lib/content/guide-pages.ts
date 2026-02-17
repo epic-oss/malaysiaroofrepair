@@ -98,22 +98,22 @@ export const guidePages: GuidePage[] = [
         {
           heading: 'Popular Sika Waterproofing Products',
           content:
-            'SikaTop Seal 107: Flexible cementitious coating for roofs, terraces, and balconies. Easy to apply with brush. Price: RM80-120 per 20kg pail.\n\nSikalastic 560: Elastic waterproofing membrane. Excellent for movement joints. Price: RM150-200 per 20kg.\n\nSikagard 62: Protective coating for concrete. Prevents carbonation and water ingress. Price: RM200-280 per 20L.\n\nSikafloor: Waterproof flooring systems. Ideal for basements and car parks.\n\nSikafill: Crack repair and waterproofing. Flexible polyurethane sealant.',
+            '• **SikaTop Seal 107** — Flexible cementitious coating for roofs, terraces, and balconies. Easy brush application. Price: ~RM80–120 per 20kg pail.\n• **Sikalastic 560** — Elastic waterproofing membrane. Excellent for movement joints. Price: ~RM150–200 per 20kg.\n• **Sikagard 62** — Protective coating for concrete. Prevents carbonation and water ingress. Price: ~RM200–280 per 20L.\n• **SikaFloor** — Waterproof flooring systems. Ideal for basements and car parks.\n• **SikaFill** — Flexible polyurethane sealant for crack repair and waterproofing.',
         },
         {
           heading: 'Where to Buy Sika Products in Malaysia',
           content:
-            'Sika authorized distributors throughout Malaysia\nMajor hardware stores (Mr DIY, HomePro)\nSpecialty building material suppliers\nOnline platforms (Lazada, Shopee for smaller products)\nDirect from contractors who are Sika-certified applicators\n\nAlways buy from authorized sellers to ensure genuine products and avoid counterfeits.',
+            '• Sika authorized distributors throughout Malaysia\n• Major hardware stores (Mr DIY, HomePro)\n• Specialty building material suppliers\n• Online platforms (Lazada, Shopee) for smaller packs\n• Direct from Sika-certified applicator contractors\n\nAlways buy from authorized sellers to ensure genuine products and avoid counterfeits.',
         },
         {
           heading: 'How to Apply Sika Waterproofing',
           content:
-            '1. Surface Preparation: Clean surface, remove loose material, repair cracks\n2. Prime if required: Some products need primer (Sika Primer)\n3. First coat: Apply evenly with brush or roller\n4. Drying time: Wait 4-6 hours between coats\n5. Second coat: Apply perpendicular to first coat\n6. Curing: Allow 24-48 hours before water exposure\n\nFollow product-specific instructions on the container. For large projects, hire Sika-certified contractors.',
+            '1. Surface Preparation: Clean the surface, remove loose material, repair all cracks\n2. Prime if required: Some Sika products need a primer coat (Sika Primer)\n3. First coat: Apply evenly with brush or roller\n4. Drying time: Wait 4–6 hours between coats\n5. Second coat: Apply perpendicular to the first coat\n6. Curing: Allow 24–48 hours before water exposure\n\nFollow product-specific instructions on the container. For large projects, hire Sika-certified contractors.',
         },
         {
           heading: 'Sika vs Other Brands',
           content:
-            'Sika: Premium quality, higher price, proven track record, extensive product range\nPentens: Malaysian brand, more affordable, good for residential use\nBostik: Mid-range price, reliable performance\nMapei: Similar to Sika, Italian brand, comprehensive systems\n\nFor critical applications, Sika is recommended. For standard residential waterproofing, Pentens or Bostik offer good value.',
+            '• **Sika** — Premium quality, higher price, proven track record, most extensive product range in Malaysia\n• **Pentens** — Malaysian brand, more affordable, good for standard residential applications\n• **Bostik** — Mid-range price, reliable performance, unique fibre-reinforced AC2 coating\n• **Mapei** — Italian brand similar to Sika, comprehensive systems for commercial projects\n\nFor critical applications (commercial, high-exposure areas), Sika is recommended. For standard residential waterproofing, Pentens or Bostik offer strong value.',
         },
       ],
       faq: [
