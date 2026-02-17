@@ -31,6 +31,7 @@ const SLUG_CATEGORIES: Record<string, Category> = {
   'water-leaking-from-ceiling':        'Emergency Repair',
   'bitumen-waterproofing-malaysia':    'Waterproofing',
   'sika-109-review':                   'Product Review',
+  'bathroom-waterproofing-malaysia':   'Waterproofing',
 }
 
 function getCategory(slug: string): Category {

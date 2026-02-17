@@ -499,6 +499,43 @@ export const guidePages: GuidePage[] = [
     },
   },
   {
+    slug: 'bathroom-waterproofing-malaysia',
+    title: `Bathroom Waterproofing Malaysia ${siteConfig.currentYear} — Methods, Products & Cost Guide`,
+    description:
+      'Complete guide to bathroom waterproofing in Malaysia. Cementitious vs liquid membrane vs no-hacking methods, best products (Sika 109, Mapei Planiseal 388, AquaDefense), 2026 costs, and DIY step-by-step.',
+    h1: `Bathroom Waterproofing Malaysia: Complete Guide to Methods, Products & Cost (${siteConfig.currentYear})`,
+    targetKeyword: 'bathroom waterproofing',
+    monthlySearchVolume: 210,
+    content: {
+      intro:
+        'Bathroom waterproofing is the number-one most common waterproofing job in Malaysian homes. This guide covers when waterproofing is needed, the three main methods (cementitious, liquid membrane, no-hacking), best products with 2026 pricing, DIY application steps, and how to hire a licensed CIDB contractor.',
+      sections: [
+        {
+          heading: 'Bathroom Waterproofing Methods in Malaysia',
+          content:
+            'Three methods are available: (1) Cementitious waterproofing — two-part cement mortar applied to bare concrete after tile hacking, the most common and longest-lasting method (10–20 years); (2) Liquid-applied membrane — one-component ready-to-use products like Mapelastic AquaDefense, tile-ready in 4 hours, more expensive per sqm; (3) No-hacking injection — E-Gel or PU gel injected through grout lines without removing tiles, 3–5 year warranty, suitable for existing bathrooms with moderate leaks.',
+        },
+        {
+          heading: 'Cost Breakdown 2026',
+          content:
+            'Professional installation: RM5–15/sq ft for waterproofing only. Full bathroom renovation with waterproofing: RM8,000–15,000. No-hacking E-Gel injection: RM1,300–3,350 per bathroom. Waterproofing only (labor + material): RM1,500–3,000 for a standard condo bathroom.',
+        },
+      ],
+      faq: [
+        {
+          question: 'How much does bathroom waterproofing cost in Malaysia?',
+          answer:
+            'Professional installation runs RM5–15 per sq ft. A full bathroom renovation including waterproofing costs RM8,000–15,000. No-hacking E-Gel injection costs RM1,300–3,350 per bathroom.',
+        },
+        {
+          question: 'Can I waterproof my bathroom without hacking tiles?',
+          answer:
+            'Yes — E-Gel injection (RM1,300–3,350) or PU injection (RM450+ minimum trip) can fix leaks through existing tiles. Full hacking is recommended for bathrooms over 15 years old or with multiple failure points.',
+        },
+      ],
+    },
+  },
+  {
     slug: 'bitumen-waterproofing-malaysia',
     title: `Bitumen Waterproofing Malaysia — Torch-On Membrane Complete Guide ${siteConfig.currentYear}`,
     description:
