@@ -1,9 +1,10 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
+import { createBrowserClient } from '@supabase/ssr'
 import { Button } from '@/components/ui/Button'
 import { cn } from '@/lib/utils/cn'
 
@@ -14,12 +15,29 @@ const navLinks = [
   { href: '/services/roof-leak-repair', label: 'Services' },
   { href: '/pricing', label: 'Pricing' },
   { href: '/submit', label: 'List Your Business' },
-  { href: '/dashboard', label: 'Dashboard' },
 ]
 
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
   const pathname = usePathname()
+
+  useEffect(() => {
+    const supabase = createBrowserClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    )
+
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setIsLoggedIn(!!session)
+    })
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setIsLoggedIn(!!session)
+    })
+
+    return () => subscription.unsubscribe()
+  }, [])
 
   const toggleMenu = () => setIsOpen(!isOpen)
   const closeMenu = () => setIsOpen(false)
@@ -77,11 +95,19 @@ export function MobileMenu() {
                     List Your Business
                   </Button>
                 </Link>
-                <Link href="/dashboard" onClick={closeMenu} className="block">
-                  <Button variant="primary" className="w-full">
-                    Dashboard
-                  </Button>
-                </Link>
+                {isLoggedIn ? (
+                  <Link href="/dashboard" onClick={closeMenu} className="block">
+                    <Button variant="primary" className="w-full">
+                      Dashboard
+                    </Button>
+                  </Link>
+                ) : (
+                  <Link href="/login" onClick={closeMenu} className="block">
+                    <Button variant="primary" className="w-full">
+                      Login
+                    </Button>
+                  </Link>
+                )}
               </div>
             </nav>
           </div>

@@ -2,6 +2,8 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useEffect, useState } from 'react'
+import { createBrowserClient } from '@supabase/ssr'
 import { Button } from '@/components/ui/Button'
 import { cn } from '@/lib/utils/cn'
 
@@ -15,6 +17,24 @@ const navLinks = [
 
 export function Navbar() {
   const pathname = usePathname()
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  useEffect(() => {
+    const supabase = createBrowserClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    )
+
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setIsLoggedIn(!!session)
+    })
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setIsLoggedIn(!!session)
+    })
+
+    return () => subscription.unsubscribe()
+  }, [])
 
   return (
     <nav className="flex items-center space-x-1">
@@ -46,11 +66,19 @@ export function Navbar() {
             List Your Business
           </Button>
         </Link>
-        <Link href="/dashboard">
-          <Button variant="primary" size="sm">
-            Dashboard
-          </Button>
-        </Link>
+        {isLoggedIn ? (
+          <Link href="/dashboard">
+            <Button variant="primary" size="sm">
+              Dashboard
+            </Button>
+          </Link>
+        ) : (
+          <Link href="/login">
+            <Button variant="primary" size="sm">
+              Login
+            </Button>
+          </Link>
+        )}
       </div>
     </nav>
   )
