@@ -65,6 +65,21 @@ export async function POST(request: NextRequest) {
     // ── Forward to Make.com webhook FIRST (critical path for lead delivery) ───
     const webhookUrl = process.env.MAKE_WEBHOOK_URL || process.env.MAKE_QUOTE_WEBHOOK_URL
 
+    // Format timestamp in Malaysia timezone (MYT = UTC+8)
+    const now = new Date()
+    const mytParts = new Intl.DateTimeFormat('en-GB', {
+      timeZone: 'Asia/Kuala_Lumpur',
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true,
+    }).formatToParts(now)
+    const p: Record<string, string> = {}
+    for (const part of mytParts) p[part.type] = part.value
+    const timestamp = `${p.day} ${p.month} ${p.year}, ${p.hour}:${p.minute} ${(p.dayPeriod ?? '').toUpperCase()} MYT`
+
     if (webhookUrl && !webhookUrl.startsWith('your_')) {
       try {
         const webhookRes = await fetch(webhookUrl, {
@@ -79,7 +94,7 @@ export async function POST(request: NextRequest) {
             issue_type: issue_type || '',
             description,
             state: state || '',
-            timestamp: new Date().toISOString(),
+            timestamp,
           }),
         })
         if (!webhookRes.ok) {
