@@ -19,6 +19,10 @@ export const metadata: Metadata = {
   verification: {
     google: 'ULSqaFDUf6p1IdaIuCGxPQ6gBfP98MnWnn8r8ujDrvs',
   },
+  icons: {
+    icon: '/mrr-logo.png',
+    apple: '/mrr-logo.png',
+  },
 }
 
 export default function RootLayout({
