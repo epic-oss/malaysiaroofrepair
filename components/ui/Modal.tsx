@@ -1,6 +1,6 @@
 'use client'
 
-import { Fragment, ReactNode } from 'react'
+import { ReactNode, useEffect } from 'react'
 import { X } from 'lucide-react'
 import { cn } from '@/lib/utils/cn'
 
@@ -21,51 +21,64 @@ export function Modal({
   size = 'md',
   className,
 }: ModalProps) {
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => { document.body.style.overflow = '' }
+  }, [isOpen])
+
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto">
-      {/* Backdrop */}
+    /* Full-screen overlay */
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4">
+      {/* Dark backdrop */}
       <div
-        className="fixed inset-0 bg-black bg-opacity-50 transition-opacity"
+        className="fixed inset-0 bg-black/60 backdrop-blur-sm"
         onClick={onClose}
+        aria-hidden="true"
       />
 
-      {/* Modal */}
-      <div className="flex min-h-full items-center justify-center p-4">
-        <div
-          className={cn(
-            'relative w-full rounded-lg bg-white shadow-xl transition-all',
-            {
-              'max-w-sm': size === 'sm',
-              'max-w-md': size === 'md',
-              'max-w-2xl': size === 'lg',
-              'max-w-4xl': size === 'xl',
-              'max-w-full': size === 'full',
-            },
-            className
+      {/* Modal panel */}
+      <div
+        className={cn(
+          'relative z-10 flex flex-col w-full bg-white shadow-2xl',
+          'rounded-t-2xl sm:rounded-2xl',
+          'max-h-[85vh] sm:max-h-[85vh]',
+          {
+            'sm:max-w-sm': size === 'sm',
+            'sm:max-w-lg': size === 'md',
+            'sm:max-w-2xl': size === 'lg',
+            'sm:max-w-4xl': size === 'xl',
+            'sm:max-w-full': size === 'full',
+          },
+          className
+        )}
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Header — always visible */}
+        <div className="flex-none flex items-center justify-between border-b border-gray-200 px-5 py-4">
+          {title && (
+            <h2 className="text-lg font-semibold text-gray-900 pr-8 leading-snug">
+              {title}
+            </h2>
           )}
-          onClick={(e) => e.stopPropagation()}
-        >
-          {/* Close button */}
           <button
             onClick={onClose}
-            className="absolute right-4 top-4 rounded-md p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-600"
+            className="ml-auto flex-none rounded-full p-1.5 text-gray-400 hover:bg-gray-100 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-600"
+            aria-label="Close"
           >
             <X className="h-5 w-5" />
           </button>
+        </div>
 
-          {/* Title */}
-          {title && (
-            <div className="border-b border-gray-200 px-6 py-4">
-              <h2 className="text-xl font-semibold text-gray-900">{title}</h2>
-            </div>
-          )}
-
-          {/* Content */}
-          <div className="max-h-[calc(100vh-8rem)] overflow-y-auto">
-            {children}
-          </div>
+        {/* Scrollable body */}
+        <div className="flex-1 overflow-y-auto overscroll-contain">
+          {children}
         </div>
       </div>
     </div>

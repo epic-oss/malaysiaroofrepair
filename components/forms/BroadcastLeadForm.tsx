@@ -61,130 +61,134 @@ export function BroadcastLeadForm({ onSuccess }: BroadcastLeadFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      {/* Personal Information */}
-      <div className="grid gap-4 md:grid-cols-2">
-        <Input
-          name="full_name"
-          label="Full Name"
-          placeholder="John Tan"
-          required
-        />
-        <Input
-          name="phone"
-          label="Phone Number"
-          type="tel"
-          placeholder="012-345-6789"
-          required
-        />
-      </div>
-
-      <Input
-        name="email"
-        label="Email Address"
-        type="email"
-        placeholder="john@example.com"
-        required
-      />
-
-      <Input
-        name="lead_company"
-        label="Company Name (Optional)"
-        placeholder="ABC Sdn Bhd"
-      />
-
-      {/* Project Details */}
-      <div className="grid gap-4 md:grid-cols-2">
-        <Select
-          name="property_type"
-          label="Property Type"
-          required
-        >
-          <option value="">Select property type</option>
-          {siteConfig.propertyTypes.map((type) => (
-            <option key={type} value={type}>
-              {type}
-            </option>
-          ))}
-        </Select>
-
-        <Select
-          name="roof_type"
-          label="Roof Type"
-          required
-        >
-          <option value="">Select roof type</option>
-          {siteConfig.roofTypes.map((type) => (
-            <option key={type} value={type}>
-              {type}
-            </option>
-          ))}
-        </Select>
-      </div>
-
-      <Textarea
-        name="problem_description"
-        label="Problem Description"
-        placeholder="Describe your roofing issue (e.g., ceiling leaking, need waterproofing, roof replacement)"
-        rows={3}
-        required
-      />
-
-      <div className="grid gap-4 md:grid-cols-2">
-        <Select
-          name="urgency"
-          label="Urgency"
-          required
-        >
-          <option value="">Select urgency</option>
-          {siteConfig.urgencyOptions.map((option) => (
-            <option key={option} value={option}>
-              {option}
-            </option>
-          ))}
-        </Select>
-
-        <Input
-          name="preferred_date"
-          label="Preferred Date (Optional)"
-          type="date"
-        />
-      </div>
-
-      <Input
-        name="location"
-        label="Location / Area"
-        placeholder="Petaling Jaya, Selangor"
-        required
-      />
-
-      <Textarea
-        name="message"
-        label="Additional Notes (Optional)"
-        placeholder="Any additional details about your project..."
-        rows={2}
-      />
-
-      {/* Error Message */}
-      {error && (
-        <div className="rounded-md bg-red-50 p-3 text-sm text-red-700">
-          {error}
+    <form onSubmit={handleSubmit}>
+      {/* Scrollable fields */}
+      <div className="space-y-4 px-5 py-4">
+        {/* Personal Information */}
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Input
+            name="full_name"
+            label="Full Name"
+            placeholder="John Tan"
+            required
+          />
+          <Input
+            name="phone"
+            label="Phone Number"
+            type="tel"
+            placeholder="012-345-6789"
+            required
+          />
         </div>
-      )}
 
-      {/* Submit Button */}
-      <Button
-        type="submit"
-        variant="primary"
-        className="w-full"
-        disabled={isSubmitting}
-      >
-        {isSubmitting ? 'Submitting...' : 'Get Free Quotes'}
-      </Button>
+        <Input
+          name="email"
+          label="Email Address"
+          type="email"
+          placeholder="john@example.com"
+          required
+        />
 
-      <p className="text-xs text-gray-500 text-center">
-        By submitting, you agree to be contacted by roofing contractors regarding your inquiry.
-      </p>
+        <Input
+          name="lead_company"
+          label="Company Name (Optional)"
+          placeholder="ABC Sdn Bhd"
+        />
+
+        {/* Project Details */}
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Select
+            name="property_type"
+            label="Property Type"
+            required
+          >
+            <option value="">Select property type</option>
+            {siteConfig.propertyTypes.map((type) => (
+              <option key={type} value={type}>
+                {type}
+              </option>
+            ))}
+          </Select>
+
+          <Select
+            name="roof_type"
+            label="Roof Type"
+            required
+          >
+            <option value="">Select roof type</option>
+            {siteConfig.roofTypes.map((type) => (
+              <option key={type} value={type}>
+                {type}
+              </option>
+            ))}
+          </Select>
+        </div>
+
+        <Textarea
+          name="problem_description"
+          label="Problem Description"
+          placeholder="Describe your roofing issue (e.g., ceiling leaking, need waterproofing, roof replacement)"
+          rows={3}
+          required
+        />
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Select
+            name="urgency"
+            label="Urgency"
+            required
+          >
+            <option value="">Select urgency</option>
+            {siteConfig.urgencyOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </Select>
+
+          <Input
+            name="preferred_date"
+            label="Preferred Date (Optional)"
+            type="date"
+          />
+        </div>
+
+        <Input
+          name="location"
+          label="Location / Area"
+          placeholder="Petaling Jaya, Selangor"
+          required
+        />
+
+        <Textarea
+          name="message"
+          label="Additional Notes (Optional)"
+          placeholder="Any additional details about your project..."
+          rows={2}
+        />
+
+        {/* Error Message */}
+        {error && (
+          <div className="rounded-md bg-red-50 p-3 text-sm text-red-700">
+            {error}
+          </div>
+        )}
+      </div>
+
+      {/* Sticky submit footer — always visible */}
+      <div className="sticky bottom-0 flex-none border-t border-gray-200 bg-white px-5 py-4 space-y-2">
+        <Button
+          type="submit"
+          variant="primary"
+          className="w-full"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? 'Submitting...' : 'Get Free Quotes'}
+        </Button>
+        <p className="text-xs text-gray-500 text-center">
+          By submitting, you agree to be contacted by roofing contractors regarding your inquiry.
+        </p>
+      </div>
     </form>
   )
 }
